@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>survey_form</title>
+</head>
+<body>
+  <h3>설문조사</h3>
+  <form>
+    <!-- label 태그 : 라벨을 정의할 떄 사용
+    for 속성과 id 속성의 값을 같게 해서 결합할 수 있음 -->
+    <label for = "textInput">이름</label>
+    <input type = "text" id = "textInput" /><br />
+    <span>이메일</span><input type = "email" placeholder="love@example.com"><br />
+  </form>
+  <h4>나이</h4>
+  <form>
+    <span><input type = "radio" name = "age" value = "teenager" />10대</span>
+    <span><input type = "radio" name = "age" value = "twenties" />20대</span>
+    <span><input type = "radio" name = "age" value = "thirties" />30대</span>
+    <span><input type = "radio" name = "age" value = "forties" />40대</span>
+    <span><input type = "radio" name = "age" value = "fifties" />50대</span>
+    <span><input type = "radio" name = "age" value = "sixties and beyond" />60대 이상</span>
+  </form>
+  <h4>원하는 강의(복수응답 가능합니다.)</h4>
+  <form>
+    <span><input type="checkbox" name = "class" value = "html" />html</span>
+    <span><input type="checkbox" name = "class" value = "javascript" />javascript</span>
+    <span><input type="checkbox" name = "class" value = "css" />css</span>
+  </form>
+  
+  <br />
+  <!--textarea : 문자를 쓸 수 있는 공간임.
+    cols : 가로길이, rows : 세로길이-->
+  <span><textarea cols = "80" rows = "10" placeholder="하고 싶은 말을 써주세요:)"></textarea></span>
+  <!--버튼의 위치를 지정하기 위해 사용함-->
+  <button style="position: absolute; top: 440px; left: 150;">제출</button>
+    
+</body>
+</html>

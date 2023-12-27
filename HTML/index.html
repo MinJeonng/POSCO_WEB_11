@@ -1,0 +1,94 @@
+<!-- 웹서버는 제일처음으로 index라는 이름을 가진 걸 찾아가므로 이름을 index로 함 -->
+<!DOCTYPE html> <!-- 처음에 '!'를 하면 html5 문서 형식이 딱 뜸-->
+<html lang="ko"> <!-- lan : 언어를 뜻함 -->
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 환경에 맞게 만든 설정-->
+  <title>KDT 11기</title> <!-- 탭화면에 나옴-->
+</head>
+<body>
+  <!-- div 태그 : block 태그임. division의 약자로, 속성이 한 줄의 영역을 차지-->
+  <div>Hello world!!</div> 
+  <div>안녕하세요</div> <!-- 이렇게 하면 다음 줄에 안녕하세요가 생성됨, 각 한줄씩 차지함-->
+
+  <!-- h1 ~6 : 폰트 크기가 다 상이함, 자동으로 한줄이 넘어감 = 한 줄의 영역을 차지하고 있음. 즉 이것도 block 태그임.-->
+  <h1>Heading 1</h1> 
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <!--p 태그 : 문장을 쓰는 공간-->
+  <p>안녕하세요.<br /> 저는 샬라입니다.</p>
+
+  <!-- br : 줄바꿈 태그, /앞에 꼭 한칸 띄어줘야함-->
+  <!-- hr : 한줄 그어줌-->
+  <hr />
+
+  <!--목록을 보는 태그
+  ul : 순서 없는 목록을 나타냄
+  li : ul이나 ol태그 안에 list 작성-->
+  <ul> 
+    <li>사과</li>
+    <li>바나나</li>
+    <li>파인애플</li>
+  </ul>
+  <!-- 속성 추가
+  ul태그 마커 모양 : disc(기본모양),circle, square, none-->
+  <ul type = "circle"> 
+    <li>사과</li>
+    <li>바나나</li>
+    <li>파인애플</li>
+  </ul>
+
+  <!-- ol : 순서 있는 목록을 나타냄-->
+  <ol> 
+    <li>하나</li>
+    <li>둘</li>
+    <li>셋</li>
+  </ol>
+<!-- ol 태그 마커 모양(속성) : 1, A, I, a, i 
+start : 시작번호
+reversed : 역순   -->
+  <ol type = "1", start="10" reversed> 
+    <li>하나</li>
+    <li>둘</li>
+    <li>셋</li>
+  </ol>
+
+  <ul type = "square">
+    <li>
+      <ol>
+        <li><b>맥북</b></li>
+        <li><strong>마우스</strong></li>
+        <li><i>핸드폰</i></li>
+      </ol>
+    </li>
+    <br />
+    
+    <li>
+      <ol>
+        <li><em>맥북</em></li>
+        <li><del>마우스</del></li>
+        <li><u>핸드폰</u></li>
+      </ol>
+    </li>
+  </ul>
+  <!-- img 태그는 항상 속성이 있어야하고, 빈 요소임, alt : 이미지 로드가 안될때 작성될 메시지-->
+  <img src ="https://ssl.pstatic.net/melona/libs/1474/1474337/d42382ea6db8cad04329_20231226162939187.jpg" alt = "광고 이미지" />
+
+  <!--a 태그 : 인라인 태그로서, 페이지를 이동, _blank 하면 새로운 탭이 열림 -> 이걸 안하고 그냥 href만 하면 현재페이지가 이동링크로 바뀜, 이건 사이트의 성격에 맞게 해야함
+  inline 태그 : block과 반대로 영역이 없음, a태그가 inline 태그이다. 그래서 아래와 같이 작성하면 한줄로 작성된다.-->
+  <div>
+    <a href="/HTML/cafe.html" target="_blank">이동</a>
+    <a href="/HTML/cafe.html" target="_blank">이동</a>
+    <a href="/HTML/cafe.html" target="_blank">이동</a>
+  </div>
+  <!--span 태그 : inline태그로, div안에 들어가는 경우가 많고 한줄에 들어감-->
+  <div>
+    <span>Hi.</span><span>nice</span>
+    <span style="color: aquamarine;">Hi.</span><span>nice</span>
+  </div>
+</body>
+</html>

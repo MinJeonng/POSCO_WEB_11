@@ -101,6 +101,7 @@ reversed : 역순   -->
     <!--placeholder 속성 : 사용자에게 어떠한 값을 입력하라고 안내해주는 역할-->
     <!-- value 속성 : 기본값으로 들어가있음. 그러나 지울 수는 있음-->
     <input type="text" placeholder="이름" value="wow"/><br />
+    <input type="text" placeholder="이름" value="Good" readonly/><br /> <!--readonly : 읽을 수만 있음-->
     <input type="password" placeholder="비밀번호" /><br />
 
     <!--체크박스 속성 : 여러개 체크 가능, value는 서버로 보내주는 값이고, >옆에 값은 사용자에게 보여지는 값 
@@ -126,7 +127,7 @@ reversed : 역순   -->
       <optgroup label="아시아">
         <option value = "korea">대한민국</option>
         <option value = "japan">일본</option>
-        <option value = "china">중국</option>
+        <option value = "china" disabled>중국</option> <!--disabled : 아예 선택이 안되게 만드는 것. Input에다가도 넣을 수 있음, 서버에도 안보내짐-->
       </optgroup>
       <optgroup label="북아메리카">
         <option value = "u.s.a">미국</option>

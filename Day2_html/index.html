@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>가격표</h1>
+  <!--cellspacing : 테두리 간격 사이의 너비, cellpadding: 셀 내부의 간격 -->
+  <table border="1" cellspacing = "3" cellpadding = "10">
+    <thead> <!--<thead></thead>와 <tbody></tbody>는 꼭 추가해주기-->
+      <tr> <!-- 하나의 행을 만들땐 <tr> 필수!, tr : table row-->
+        <th>메뉴</th> <!--th : table head-->
+        <th>가격</th>
+        <th>비고</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>엽기떡볶이</td>  <!--td : table data-->
+        <td>14000원</td>
+        <td>매운맛 선택(초보맛, 착한맛, 오리지널, 아주 맵게)</td>
+      </tr>
+      <tr>
+        <td>엽기 닭볶음탕</td>
+        <td>20000원</td>
+        <td>매운맛 선택(초보맛, 오리지널)</td>
+      </tr>
+      <tr>
+        <td>꿔바로우</td>
+        <td>5000원</td>
+        <td>사이즈 선택(미니, 기본)</td>
+      </tr>
+    </tbody>
+
+  </table>
+  <h2>새로운 가격표</h2>
+  <table border="1" cellspacing = "0" cellpadding = "5">
+    <thead>
+      <tr>
+        <!--th*3 하고 enter한 후, 첫번째 줄에 메뉴 쓰고 tab누르면 바로 가격 쓸 자리로 넘어간다-->
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>비고</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td>엽기 닭발</td>
+        <td>10000원</td>
+        <td>매운맛만 있음</td>
+      </tr>
+      <tr>
+        <td>참치김밥</td>
+        <td rowspan = "2">4000원</td> <!--rowspan : 해당 칸을 점유하는 행의 수 지정 -> 행을 합칠 수 있음, "안의 수 만큼"-->
+        <td></td> <!--빈 값이어도 왼쪽 표시가 필요함-->
+
+      </tr>
+      <tr>
+        <td>치즈볶음밥</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">순대(품절)</td> <!--colspan : 해당 칸을 점유하는 열의 수 지정-->
+      </tr>
+    </tbody>
+
+  </table>
+</body>
+</html>

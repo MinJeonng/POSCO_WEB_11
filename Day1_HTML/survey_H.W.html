@@ -9,10 +9,14 @@
   <h3>설문조사</h3>
   <form>
     <!-- label 태그 : 라벨을 정의할 떄 사용
-    for 속성과 id 속성의 값을 같게 해서 결합할 수 있음 -->
+    for 속성과 id 속성의 값을 같게 해서 결합할 수 있음 -> 이렇게 하면 딱 하나의 값만 가질 수 있게 해줌.
+    즉, 앞에 label을 커서로 클릭해도 text 칸에 쓸 수 있게 해줌!(웹사이트 열어서 눌러보면 email 만든거랑 다른거 확인가능) -->
     <label for = "textInput">이름</label>
     <input type = "text" id = "textInput" /><br />
-    <span>이메일</span><input type = "email" placeholder="love@example.com"><br />
+    이메일<input type = "email" placeholder="love@example.com"><br />
+    <!-- number 타입 : 숫자만 입력 가능, 모바일 같은데에서 회원가입할때 번호 누를때 숫자타입만 입력하게 나오게 하는 방법-->
+    <input type = "number" />
+  
   </form>
   <h4>나이</h4>
   <form>
@@ -23,19 +27,49 @@
     <span><input type = "radio" name = "age" value = "fifties" />50대</span>
     <span><input type = "radio" name = "age" value = "sixties and beyond" />60대 이상</span>
   </form>
+  
+  <hr />
+  <!-- 꿀팁 : 여러개 복사할 부분에 커서 놓고, command + option 누르고 방향키 아래로 누르면 커서가 여러개를 한꺼번에 가져가면서 한번에 
+    입력가능!!!! 
+    추가로, input 똑같은 타입이 여러개 해야할때 input*6(원하는개수)하고 엔터치면 한번에 입력가능! : -->
+  
+    <!-- 추가 피드백 보완-->
+  <input type="radio" name = "age" id = "ten" />
+  <label for = "ten">10대</label>
+  <input type="radio" name = "age" id = "twenties">
+  <label for = "twenties">20대</label>
+  <input type="radio" name = "age" id = "thirties">
+  <label for = "thirties">30대</label>
+  <input type="radio" name = "age" id = "forties">
+  <label for = "forties">40대</label>
+  <input type="radio" name = "age" id = "fifties">
+  <label for = "fifties">50대</label>
+  <input type="radio" name = "age" id = "sixties and beyond">
+  <label for = "sixties and beyond">60대 이상</label>
+  
   <h4>원하는 강의(복수응답 가능합니다.)</h4>
   <form>
     <span><input type="checkbox" name = "class" value = "html" />html</span>
     <span><input type="checkbox" name = "class" value = "javascript" />javascript</span>
     <span><input type="checkbox" name = "class" value = "css" />css</span>
   </form>
+
+  <!--추가 피드백 보완-->
+  <input type = "checkbox" name = "class" id = "html" />
+  <label for = "html">html</label>
+  <input type="checkbox" name = "class" id = "javascript">
+  <label for = "javascript">javascript</label>
+  <input type="checkbox" name = "class" id = "css">
+  <label for = "css">css</label>
   
   <br />
   <!--textarea : 문자를 쓸 수 있는 공간임.
     cols : 가로길이, rows : 세로길이-->
   <span><textarea cols = "80" rows = "10" placeholder="하고 싶은 말을 써주세요:)"></textarea></span>
-  <!--버튼의 위치를 지정하기 위해 사용함-->
-  <button style="position: absolute; top: 440px; left: 150;">제출</button>
+  
+  <input type="button" value="제출" />
     
 </body>
 </html>
+
+

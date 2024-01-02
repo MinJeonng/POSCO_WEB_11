@@ -7,8 +7,12 @@
 
   /* 이렇게 따로따로 개별속성으로도 가능함, 그대신 너비, 종류, 컬러 다 넣어줘야함 */
   border-width: 3px;
-  border-style: ridge;
+  border-style: solid;
   border-color: blueviolet;
+
+  /*  이 부분 질문 이렇게 했을땐 안된다. */
+  /* padding-bottom: 1.5px; */
+  /* border-bottom: 1.5px; */
 
   /* border-radius : 모서리 변경 */
   /* border-radius: 10px; */
@@ -16,7 +20,7 @@
   /* border-bottom-right-radius: 50px; */
   /* border-top-left-radius: 20px; */
 
-  border-radius: 10px 20px 30px 40px;
+  border-radius: 10px 20px 30px 40px; 
 
   /* 원 만들 수 있음 */
   /* border-radius: 50%; */

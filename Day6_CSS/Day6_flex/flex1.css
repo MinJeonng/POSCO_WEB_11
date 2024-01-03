@@ -1,0 +1,63 @@
+.main{
+  background-color: bisque;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  /* 순서 그대로 뒤로 붙음(flex-start가 기본값) */
+  /* justify-content: flex-end; */
+
+  /* 양 끝에 여백 동일하게 해서 붙음, 축의 정렬을 설정(flex-direction과 헷갈리지 말것) */
+  /* justify-content:space-between; */
+
+  /* 여백이 완전히 균등하게 배분 */
+  justify-content: space-evenly;
+
+  /* flex-direction : row가 기본값, x축,y축의 시작축을 지정 */
+  /* flex-direction: column; */
+
+  /* flex-wrap : 줄바꿈을 설정 */
+  /* flex-wrap: wrap; */
+
+  /* 맨 밑에 붙음, flex-start는 기본값 */
+  align-items: flex-end;
+
+  /* align-items */
+  /* 위아래 축 정렬을 설정, 단 한줄일때 */
+
+  /* align-content : 위아래 축의 정렬을 설정(단, 여러줄 일때) */
+  /* align-content: flex-end; */
+  
+
+}
+.box1{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+
+}
+.box2{
+  width: 100px;
+  height: 100px ;
+  background-color: orange;
+}
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+.box4{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+
+}
+.box5{
+  width: 100px;
+  height: 100px ;
+  background-color: blue;
+}
+.box6{
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}

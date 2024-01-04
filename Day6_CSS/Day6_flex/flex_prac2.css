@@ -3,74 +3,86 @@ body > div{
   font-weight: bold;
 }
 h3{
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 .container1{
   background-color: rgb(207, 204, 204);
   width: 100vw;
   height: 50px;
   display: flex;
-  justify-content: flex-end;
-  position:relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
   
+}
+.menu1{
+  /* 한줄(일자)로 만들 수 있음 */
+  display: flex;
+}
+.menu1 div:nth-child(2){
+  margin: 0px 10px;
 }
 .container2{
   background-color: rgb(207, 204, 204);
   width: 100vw;
   height: 50px;
   display: flex;
-  justify-content: center;
-  position:relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  margin-top: 10px;
 }
+
 .container3{
   background-color: rgb(207, 204, 204);
   width: 100vw;
   height: 50px;
   display: flex;
-  justify-content: center;
-  position:relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  margin-top: 10px;
+}
+.container3 .menu7{
+  display: flex;
+
+}
+.container3 div:nth-child(2){
+  margin:0px 10px;
 }
 .container4{
   background-color: rgb(207, 204, 204);
   width: 100vw;
   height: 50px;
   display: flex;
-  justify-content: flex-start;
-  position:relative;
+  /* 양 옆으로 붙음 */
+  justify-content: space-between;
+  align-items: center;
+  /* 양쪽 끝에 padding값이 들어감 */
+  padding: 0px 10px;
+  margin-top: 10px;
 }
-/* 수정필요 */
-.con2 .logo4{
-  right:10px;
-  position: absolute;
-}
-.container1 .logo{
-  left: 10px;
-  position: absolute;
   
+.menu4{
+  display: flex;
 }
-.container2 .logo2{
-  left: 10px;
-  position: absolute;
+.menu4 div:nth-child(2n){
+  margin:0px 10px;
+}
+.login4 div:first-child{
+  margin: 0px 10px;
+}
+.login4{
+  display:flex;
+}
 
-}
-.container3 .logo{
-  left: 10px;
-  position: absolute;
-}
-.container3 .logo5{
-  right:10px;
-  position: absolute;
-}
 .head {
-  width: 100%;
+  width: 100vw;
   height: 25px;
   display:flex;
   justify-content: center;
   background-color: pink;
   align-items: center;
-}
-.container4 .logo1{
-  right:10px;
-  position: absolute;
+  padding: 0px 10px;
+  margin-top: 10px;
 }

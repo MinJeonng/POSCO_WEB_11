@@ -1,3 +1,4 @@
+<!-- flex를 이용한 header만들기 실습 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +10,50 @@
 <body>
   <h3>Flex를 이용해 여러 종류의 Header를 만들어보자!</h3>
   <div class = "container1">
-    <p class = "logo">LOGO</p>
-    <p class = "logo1">MENU1  MENU2  MENU3</p>
-  </div>
-  <br />
-  <div class="container2">
-    <p class = "logo2">MENU1</p>
-    <p class = "logo3">MENU2</p>
-    <div class = "con2">
-      <p class = "logo4">MENU3</p>
-      
+      <div class = "logo1">LOGO</div>
+      <div class = "menu1">
+        <div>MENU1</div>
+        <div>MENU2</div>
+        <div>MENU3</div>
     </div>
-  </div><br />
-  <div class="container3">
-    <p class = "logo">LOGO</p>
-    <p class = "logo1">MENU1  MENU2  MENU3</p>
-    <p class = "logo5">LOGIN</p>
-
-  </div><br />
-  <div class = "head">
-    <p>header4는 선택입니다!</p>
   </div>
-  <br />
+
+  <!-- 
+  margin : 두개 쓸때 이게 왼쪽 오른쪽 인지 확인하기-->
+  
+  <div class="container2">
+    <div class = "menu1">MENU1</div>
+    <div class = "menu2">MENU2</div>
+    <div class = "menu3">MENU3</div>
+
+    
+  </div>
+  <div class="container3">
+    <div class = "logo2">LOGO</div>
+    <div class = "menu7">
+      <div>MENU1</div>
+      <div>MENU2</div>
+      <div>MENU3</div>
+    </div>
+    <div class = "logo3">LOGIN</div>
+
+  </div>
+  <div class = "head">
+     <div>header4는 선택입니다!</div>
+  </div>
+  
   <div class="container4">
-    <p class = "logo">LOGO MENU1  MENU2  MENU3</p>
-    <p class = "logo1">LOGIN SIGNUP</p>
+    <div class  = "menu4">
+      <div>LOGO</div>
+      <div>MENU1</div>
+      <div>MENU2</div>
+      <div>MENU3</div>
+    </div>
+    <div class = "login4">
+      <div>LOGIN</div>
+      <div>SIGNUP</div>
+    </div>
+    
     
 
   </div>

@@ -1,0 +1,42 @@
+.box{
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+.box1:hover{
+  width: 400px;
+  background-color: brown;
+  opacity: 0.5;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  /* 마우스커서가 다가가면 0.5초있다가 변한다는 것 */
+  transition-delay: 0.5s;
+}
+.box2:hover{
+  background-color: pink;
+  transform:rotate(180deg);
+  transition: all 1s ease-in-out;
+}
+.box3:hover{
+  transform:scale(3) translate(100px,100px);
+  transition: all 3s ease-in-out;
+}
+.box4:hover{
+  transform:translate(-5px, -15px);
+  /* 영역에다가 그림자 효과(음영생김)
+  (x축,y축, 얼마나 뿌옇게할거냐(숫자올라가수록 더 진해짐),그림자색상) */
+  box-shadow: 4px 4px 10px #000800;
+  transition: all 0.2s ease-in;
+}
+.box1{
+  background-color: aquamarine;
+}
+.box2{
+  background-color: yellow;
+}
+.box3{
+  background-color: gray;
+}
+.box4{
+  background-color: palegoldenrod;
+}

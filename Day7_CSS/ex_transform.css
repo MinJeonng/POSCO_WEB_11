@@ -1,5 +1,6 @@
 .main{
   display: flex;
+  position: relative;
   
 }
 .main img:first-child{
@@ -7,7 +8,7 @@
   height: 200px;
   z-index: 3;
   transform: skewY(20deg);
-  position: relative;
+  position: absolute;
   top:100px;
   left:100px;
   
@@ -18,9 +19,9 @@
   height: 200px;
   z-index: 2;
   transform: skewY(20deg);
-  left: 350px;
-  position: relative;
-  top:140px;
+  left: 300px;
+  position: absolute;
+  top:80px;
 }
 
 .main img:nth-child(3){
@@ -28,7 +29,7 @@
   height: 200px;
   z-index: 1;
   transform: skewY(20deg);
-  left: 550px;
-  position: relative;
-  top:180px;
+  left: 500px;
+  position: absolute;
+  top:60px;
 }

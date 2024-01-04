@@ -78,4 +78,4 @@ console.log(fruits.includes("orange"));
 console.log(fruits.includes("papaya"));
 //배열값 반전
 console.log(fruits.reverse());
-console.log(fruits); //반전시키고 나서 이 행을 실행하면 반전된 값이 알아서 적용되서 나옴.
+console.log(fruits); //반전시키고 나서 이 행을 실행하면 반전된 값이 알아서 적용되서 나옴.b

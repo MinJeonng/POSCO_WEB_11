@@ -1,0 +1,20 @@
+.content{
+  animation: text 2s ease-out 1s 1 ;
+  /* 아래 순서에 해당한다 참고. */
+ /* animation: name duration timing-function delay iteration-count; */
+  position: relative;
+}
+@keyframes text{
+   
+  /* 애니메이션의 시작상태 */
+  from{
+    /* 이때 right:0; 을 하면 안되는 이유? 질문 */
+    left: 100%;
+    width: 200%;
+  }
+  /* 애니메이션의 마지막 상태 */
+  to{
+    left: 0;
+    width: 100%;
+  } 
+}

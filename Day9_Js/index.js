@@ -65,7 +65,7 @@ if(myID === inputID){
 
 /*
 //삼항 연산자
-// ? 다음이 참., 위의 if 중첩문이랑 비교하면서 보기
+// ? 다음이 참!!! 위의 if 중첩문이랑 비교하면서 보기
 let myID = 'abc';
 let myPW = '1234';
 const inputId = prompt('아이디를 입력하세요');
@@ -73,7 +73,7 @@ const inputPw = prompt('비밀번호를 입력하세요');
 
 // myID === inputId ? console.log("존재하는 아이디") : console.log("아이디가 틀립니다.");
 
-//중첩도 가능
+//중첩도 가능, 문단 나눠놓은거 보면 두번째 문단 두개 log는 참이고, 맨 밑에 아이디 나오는 : 뒤에가 거짓일때 실행
 myID === inputId
     ? myPW === inputPw
         ? console.log('로그인에 성공하였습니다.')
@@ -82,6 +82,8 @@ myID === inputId
 */
 
 //삼항연산자 실습
+//new Date() : 현재 시간을 보이는 것
+// getHours() : 시간만을 보이게 하는
 let now = new Date().getHours();
 0 <= now <= 11 ? console.log('오전') : console.log('오후');
 

@@ -16,33 +16,32 @@ if( 5> 6){
 } else{
   console.log("작습니다.");
 }
-
+*/
 let isShow = true;
 let checked = false;
 
 //거짓일때 실행되어라.
 
 if (isShow) {
-  console.log("show");
+    console.log('show');
 }
 //이 조건이 거짓일때 실행하고 싶으면 not 연산자 사용하기.
 // 즉, 원래 checked가 false 값이라 콘솔 출력이 안되는데 !로 했기 때문에 조건이 false임에도 출력이 되는 것!!!!
-if(!checked){
-  console.log('checked');
+if (!checked) {
+    console.log('checked');
 }
 
 //if /else if/ else
-let name = "임씨";
-if( name === '홍길동'){
-  console.log("홍길동입니다.")
-}else if(name ==="성춘"){
-  console.log("성춘향입니다")
-}else if(name === "이몽룡"){
-  console.log("이몽룡입니다.")
-}else{
-  console.log("변사또입니다.")
+let name = '임씨';
+if (name === '홍길동') {
+    console.log('홍길동입니다.');
+} else if (name === '성춘') {
+    console.log('성춘향입니다');
+} else if (name === '이몽룡') {
+    console.log('이몽룡입니다.');
+} else {
+    console.log('변사또입니다.');
 }
-*/
 
 /*
 //if중첩문
@@ -126,65 +125,64 @@ else if(age >= 0){
     console.log("남자 유아");
 }
 }
+
 */
 
-/*
 // 수정 보완(1)- 실습 5  : 그러나 이것도 반복되는 문구가 너무 많다.
 
-let age1 = Number(prompt("나이를 입력해주세요"));
-let gender1 = prompt("성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)");
+let age1 = Number(prompt('나이를 입력해주세요'));
+let gender1 = prompt('성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)');
 
-if(gender1 === "여자"){
-  if(age >=20 ){
-    console.log(`성인 ${gender}`);
-  }else if(age >=17){
-    console.log(`고등학생 ${gender}`);
-  }else if(age >=14){
-    console.log(`중학생 ${gender}`);
-  }else if(age >=8){
-    console.log(`초등학생 ${gender}`);
-  }else {
-    console.log(`유아 ${gender}`);}
-}else{
-  if(age >=20 ){
-    console.log(`성인 ${gender}`);
-  }else if(age >=17){
-    console.log(`고등학생 ${gender}`);
-  }else if(age >=14){
-    console.log(`중학생 ${gender}`);
-  }else if(age >=8){
-    console.log(`초등학생 ${gender}`);
-  }else {
-    console.log(`유아 ${gender}`);}
+if (gender1 === '여자') {
+    if (age1 >= 20) {
+        console.log(`성인 ${gender1}`);
+    } else if (age1 >= 17) {
+        console.log(`고등학생 ${gender1}`);
+    } else if (age1 >= 14) {
+        console.log(`중학생 ${gender1}`);
+    } else if (age1 >= 8) {
+        console.log(`초등학생 ${gender1}`);
+    } else {
+        console.log(`유아 ${gender1}`);
+    }
+} else {
+    if (age1 >= 20) {
+        console.log(`성인 ${gender1}`);
+    } else if (age1 >= 17) {
+        console.log(`고등학생 ${gender1}`);
+    } else if (ag1 >= 14) {
+        console.log(`중학생 ${gender1}`);
+    } else if (age1 >= 8) {
+        console.log(`초등학생 ${gender1}`);
+    } else {
+        console.log(`유아 ${gender1}`);
+    }
 }
-*/
 
-/*
 //성별을 기준으로 했을 때 (함수를 이용하자!)
 
-let age = Number(prompt("나이를 입력해주세요"));
-let gender = prompt("성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)");
+let age = Number(prompt('나이를 입력해주세요'));
+let gender = prompt('성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)');
 
-if(gender === "남자"){
-  ageFunc(age, gender);
-}else if(gender === "여자"){
-  ageFunc(age, gender);
-}else{
-  alert('성별을 다시 입력해주세요');
+if (gender === '남자') {
+    ageFunc(age, gender);
+} else if (gender === '여자') {
+    ageFunc(age, gender);
+} else {
+    alert('성별을 다시 입력해주세요');
 }
-function ageFunc(age, gender){
-  if(age >= 20 ){
-    console.log(`성인 ${gender}`);
-  }else if(age >= 17){
-    console.log(`고등학생 ${gender}`);
-  }else if(age >= 14){
-    console.log(`중학생 ${gender}`);
-  }else if(age >= 8){
-    console.log(`초등학생 ${gender}`);
-  }else if(age >= 0){
-    console.log(`유아 ${gender}`);
-  }else{
-    alert("나이를 다시 입력해주세요.");
-  }
+function ageFunc(age, gender) {
+    if (age >= 20) {
+        console.log(`성인 ${gender}`);
+    } else if (age >= 17) {
+        console.log(`고등학생 ${gender}`);
+    } else if (age >= 14) {
+        console.log(`중학생 ${gender}`);
+    } else if (age >= 8) {
+        console.log(`초등학생 ${gender}`);
+    } else if (age >= 0) {
+        console.log(`유아 ${gender}`);
+    } else {
+        alert('나이를 다시 입력해주세요.');
+    }
 }
-*/

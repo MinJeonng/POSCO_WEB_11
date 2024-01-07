@@ -1,10 +1,9 @@
 //반복문
 //for문
-/*
-for(초기값; 조건식; 증감식){
-  //반복코드
-}
 
+for (초기값; 조건식; 증감식) {
+    //반복코드
+}
 
 //1. 5부터 0까지 1씩 감소
 for (let i = 5; i >= 0; i--) {
@@ -28,7 +27,6 @@ const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'nany', 'purple'];
 for (let p = 0; p < colors.length; p++) {
     console.log(`무지개 ${p + 1} 번째 색상은 ${colors[p]} 입니다.`);
 }
-*/
 
 //실습 7
 const inputNum = Number(prompt('숫자를 입력해주세요'));
@@ -38,7 +36,7 @@ for (let num = 1; num <= inputNum; num++) {
     }
 }
 
-//실습 8 - 이중 for문
+//실습 8 - 이중 for문, 구구단
 for (let i = 2; i <= 9; i++) {
     console.log(`---${i}단---`);
     for (let j = 1; j <= 9; j++) {

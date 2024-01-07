@@ -7,7 +7,7 @@ while(조건문){
 
 주의사항 : 조건문에 탈출조건이 있거나 , break가 필수!
 
-*/
+
 
 //step1. 1부터 5까지 1씩 증가
 let step1 = 1;
@@ -39,4 +39,26 @@ while (true) {
         //10이 되는 순간 break
         break;
     }
+}
+
+//조건문에 탈출조건
+let step5 = 0;
+while (step5 <= 10) {
+    if (step5 % 2 === 0) {
+        console.log(step5);
+    }
+    step5++;
+}
+*/
+//구구단
+let i = 2;
+let j = 1;
+while (i <= 9) {
+    console.log(`---${i}단---`);
+    while (j <= 9) {
+        j++;
+        console.log(`${i}x${j} = ${i * j}`);
+    }
+    i++;
+    j = 1; // 다시 또 새로운 3단,4단에서 곱하기 1을 해줘야하니까 reset개념
 }

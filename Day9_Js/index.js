@@ -88,46 +88,40 @@ let now = new Date().getHours();
 
 /*
 //실습 4,5
-let age = Number(prompt("나이를 입력해주세요"));
-let gender = prompt("성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)");
-if(age >=20 ){
-  if(gender === "여자"){
-    console.log("성인여자");
-  }
-  else{
-    console.log("성인남자");}
-  }
-else if(age >= 17){
-  if(gender === "여자"){
-    console.log("여자 고등학생");
-  }else{
-    console.log("남자 고등학생")
-  }
+let age = Number(prompt('나이를 입력해주세요'));
+let gender = prompt('성별을 입력해주세요 (남자/여자 중 하나로 입력해주세요.)');
+if (age >= 20) {
+    if (gender === '여자') {
+        console.log('성인여자');
+    } else {
+        console.log('성인남자');
+    }
+} else if (age >= 17) {
+    if (gender === '여자') {
+        console.log('여자 고등학생');
+    } else {
+        console.log('남자 고등학생');
+    }
+} else if (age >= 14) {
+    if (gender === '여자') {
+        console.log('여자 중학생');
+    } else {
+        console.log('남자 중학생');
+    }
+} else if (age >= 8) {
+    if (gender === '여자') {
+        console.log('여자 초등학생');
+    } else {
+        console.log('남자 초등학생');
+    }
+} else if (age >= 0) {
+    if (gender === '여자') {
+        console.log('여자 유아');
+    } else {
+        console.log('남자 유아');
+    }
 }
-else if(age >=14){
-  if(gender === "여자"){
-    console.log("여자 중학생");
-  }else{
-    console.log("남자 중학생")
-  }
-}
-else if(age >= 8){
-  if(gender === "여자"){
-    console.log("여자 초등학생");
-  }else{
-    console.log("남자 초등학생")
-  }
-}
-else if(age >= 0){
-  if(gender === "여자"){
-    console.log("여자 유아")
-  }else{
-    console.log("남자 유아");
-}
-}
-
 */
-
 // 수정 보완(1)- 실습 5  : 그러나 이것도 반복되는 문구가 너무 많다.
 
 let age1 = Number(prompt('나이를 입력해주세요'));

@@ -22,5 +22,6 @@ console.log(queryclass);
 const queryclass1 = document.querySelector('.box');
 console.log(queryclass1);
 
+//모든 요소 출력
 const queryAll = document.querySelectorAll('.box');
 console.log(queryAll);

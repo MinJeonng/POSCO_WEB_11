@@ -4,6 +4,7 @@ const p = document.createElement('p'); //p태그가 만들어지기만 한 것
 //<p></p>
 p.textContent = '카페';
 //<p>카페</p>
+//<p> 내용 삽입
 
 p.classList.add('append-p');
 //<p class = "append-p">카페</p>
@@ -18,16 +19,19 @@ console.log(p);
  * prepend() : 첫번째 자식으로 추가됌
  */
 
-// root.append(p); //append는 맨 마지막으로 들어가기 떄문에 div보다 뒤에 보여지는 것
-// root.prepend(p); // 맨 위로 올라감
-const target = document.getElementById('target');
-target.before(p); //target이 원래 2번이었으니까 그 바로 앞에 형식으로 추가됌, target의 이전형제
-target.after(p); //target의 다음형제로 추가됌
+root.append(p);
+//append는 맨 마지막으로 들어가기 떄문에 div보다 뒤에 보여지는 것
+root.prepend(p); // 맨 위로 올라감
 
+const target = document.getElementById('target');
+// target.after(p); //p가 target의 다음형제로 추가됌
+
+target.before(p);
+// target이 원래 2번이었으니까 그 바로 앞에 형식으로 추가됌, target의 이전형제
 //노드 삭제 과정
 /**
  * remove() : 선택한 요소를 삭제
- * removeChild(자식노드): 산텍힌 요소의 자식을 삭제, 자식노드를 선택해줘야함
+ * removeChild(자식노드): 선택한 요소의 자식을 삭제, 자식노드를 선택해줘야함
  */
 
 // target.remove(); //2번이 사라짐, 아예 보이지 않음

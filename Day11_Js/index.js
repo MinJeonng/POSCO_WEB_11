@@ -11,7 +11,7 @@ text.innerHTML = '여기는 <b>첫번째</b> 태그입니다.';
  * textContent vs innerText
  * - textContent : 공백 문자 그대로 반환, IE9 이전 버전 사용불가
  * - innerText : 남는 공백 문자 제거, table, tbody, tr 등 테이블 요소 수정 불가
- * innerHTML : 입력된 문자열을 HTML 형식으로
+ * innerHTML : 입력된 문자열을 HTML 형식으로 반환
  */
 
 // idList는 없음. 어차피 하나니까.
@@ -36,11 +36,9 @@ console.log(text.classList.contains('title-big'));
 //setAttribute : html 요소 속성 추가
 const link = document.getElementById('link'); //여기선 속성이 없음
 console.log(link);
-link.setAttribute('href', 'https://www.naver.com');
+link.setAttribute('href', 'https://www.naver.com/');
 const img = document.getElementById('image');
 img.setAttribute('src', 'img.jpg');
 img.setAttribute('width', '200');
 const input = document.getElementById('input');
 input.setAttribute('placeholder', '이름을 입력하세요.');
-
-//다른 노드에 접근하기

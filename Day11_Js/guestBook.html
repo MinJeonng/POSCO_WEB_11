@@ -26,10 +26,10 @@
             </div>
             <br />
             <button type="button" id="write" onclick="writeFunc()">작성</button>
-
+            <button type="button" id="reset" onclick="resetFunc()">초기화</button><br />
             <br />
             <table border="1" cellspacing="1" cellpadding="2">
-                <thead>
+                <thead id="head">
                     <tr>
                         <th>번호</th>
                         <th>작성자</th>
@@ -37,7 +37,7 @@
                         <th>작성일</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                     <tr>
                         <td>1</td>
                         <td>김민정</td>

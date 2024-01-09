@@ -1,8 +1,8 @@
-const target = document.getElementById('target'); //여기서 target을 기준으로 하겠다 선택
+const target = document.getElementById('target'); //여기서 target을 기준으로 하겠다고 선택
 console.log(target);
 
 const children = target.parentNode.children;
-//target 기준으로 부모노드에 올라간다음에 그 노드의 모든 자식을 선택해라
+//target 기준으로 부모노드에 올라간 다음에 그 노드의 모든 자식을 선택해라
 // = 즉 형제노드를 선택해라
 console.log(children);
 

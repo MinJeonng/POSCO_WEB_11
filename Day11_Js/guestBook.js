@@ -1,7 +1,7 @@
 const text = document.getElementById('text');
 text.innerHTML = '방명록입니다.';
 
-let i = 2;
+let i = 2; //기본값 때문에 2부터 시작
 let writeFunc = () => {
     let user = document.getElementById('username').value; //작성자
     let content = document.getElementById('content').value; //내용
@@ -27,6 +27,9 @@ let writeFunc = () => {
 
     //append는 여러개 넣을 수 있으니..!
 };
+function resetFunc() {
+    document.getElementById('tbody').value = '';
+}
 
 //textContent랑 innerText 블로깅
-//
+//tbody[0]을 한 이유는 getElementsByTagName 는 계속 쌓이니까 지정을 해줘야한 것

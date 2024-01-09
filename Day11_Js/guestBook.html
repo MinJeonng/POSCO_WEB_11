@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>방명록 만들기</title>
+        <style>
+            #content {
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <b><div id="text"></div></b>
+        <br />
+        <form>
+            <div>
+                <div>
+                    <label for="username">작성자 : </label>
+                    <input type="text" id="username" />
+                </div>
+                <div>
+                    <label for="content">내용 : </label>
+                    <input type="text" id="content" />
+                </div>
+            </div>
+            <br />
+            <button type="button" id="write" onclick="writeFunc()">작성</button>
+
+            <br />
+            <table border="1" cellspacing="1" cellpadding="2">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>작성자</th>
+                        <th>내용</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>김민정</td>
+                        <td>코딩 존버!!</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <script src="guestBook.js"></script>
+    </body>
+</html>

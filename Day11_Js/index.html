@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script defer src="index.js"></script>
+        <!-- 해당 스크립트를 body읽고 난 후 실행하겠단 의미이지만 대부분 잘 쓰이지 않고 순서를 뒤로뺀다. -->
+        <style>
+            .title {
+                color: blue;
+                font-size: 25px;
+            }
+            .title-big {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="text"></div>
+        <a id="link">링크</a>
+        <img id="image" />
+        <input type="text" id="input" />
+        <script src="index.js"></script>
+
+        <!-- <div id="text" class="title-big"></div> 
+        이렇게 class = "title-big" 이 있으면 toggle은 클래스를 제거해서 js에서 css 적용사항을 지워버린다.그래서 css가 적용이 안됌
+      위 같이 없어야 js에서 하려던 걸 할 수 있음-->
+    </body>
+</html>

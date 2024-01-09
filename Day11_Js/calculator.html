@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>계산기</title>
+    </head>
+    <body>
+        <h1>간단한 계산기 만들기</h1>
+
+        <div>
+            <label for="make1">값1</label>
+            <input type="number" id="make1" />
+        </div>
+        <div>
+            <label for="make2">값2</label>
+            <input type="number" id="make2" />
+        </div>
+        <div>
+            <label for="operator">연산자</label>
+            <input type="text" id="operator" />
+        </div>
+        <div>
+            <label for="make4">결과</label>
+            <input type="text" id="make4" />
+        </div>
+        <!--type="button" 을 해준 이유는 button은 원래 전송이 기본값이라
+        이걸 해주지 않으면 넘겨버린다. 버튼의 제 역할을 해주기 위해 type이 필요함
+    여기선 form태그 밑에 있는게 아니라서 괜찮지만 form태그에 넣고 이런 역할하려면 필요  -->
+        <button type="button" id="calc-button" onclick="calculate()">계산하기</button>
+        <button type="button" id="reset-button" onclick="reset()">초기화하기</button>
+        <!-- 매개변수를 넣지 않은 이유는 js를 맨 밑에서 불러오니까 -->
+
+        <script src="calculator.js"></script>
+    </body>
+</html>

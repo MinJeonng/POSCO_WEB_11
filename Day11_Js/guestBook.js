@@ -13,7 +13,8 @@ let writeFunc = () => {
     let tdDate = document.createElement('td');
     let tdNum = document.createElement('td');
     //<td></td>
-    tdWriter.textContent = user;
+
+    tdWriter.textContent = user; //값 넣어주기
     tdContent.textContent = content;
     tdNum.innerText = i++;
 
@@ -27,9 +28,8 @@ let writeFunc = () => {
 
     //append는 여러개 넣을 수 있으니..!
 };
-function resetFunc() {
-    document.getElementById('tbody').value = '';
-}
+// function resetFunc() {
+//     document.getElementById('tbody').value = '';
+// }
 
-//textContent랑 innerText 블로깅
 //tbody[0]을 한 이유는 getElementsByTagName 는 계속 쌓이니까 지정을 해줘야한 것

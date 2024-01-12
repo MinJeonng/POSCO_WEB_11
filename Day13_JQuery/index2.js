@@ -31,16 +31,18 @@ $('.numbers').mouseover(function () {
 
 //hover(): 마우스 올렸을떄와 뗐을때
 // $('.div-hover').hover(
-//     function () { //올렸을때
+//     function () {
+//         //올렸을때
 //         $(this).addClass('hover');
 //     },
-//     function () { //뗐을때
+//     function () {
+//         //뗐을때
 //         $(this).removeClass('hover');
 //     }
 // );
 $('.div-hover').hover(function () {
     $(this).toggleClass('hover');
-});
+}); //올리고 떼고가 두번 class로 안받아도 한번에 가능
 
 //scroll()
 //ex. 윈도우 창 스크롤 할 경우

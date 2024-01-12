@@ -46,7 +46,12 @@
         <h5>prepend() - 선택된 요소의 자식 중 처음에 추가</h5>
         <button type="button" onclick="prependJs()">js로 바꾸기</button>
         <button type="button" onclick="prependJquery()">jquery로 바꾸기</button>
-        <script src="jQuery.js"></script>
+
+        <h5>before(), after()- 선택된 요소의 이전과 직후에 추가</h5>
+        <button type="button" onclick="beforeJs()">js로 바꾸기</button>
+        <button type="button" onclick="beforeJquery()">jquery로 바꾸기</button>
+        <button type="button" onclick="afterJs()">js로 바꾸기(after)</button>
+        <button type="button" onclick="afterJquery()">jquery 바꾸기(after)</button>
 
         <hr />
         <h4>요소 삭제하기</h4>
@@ -78,5 +83,6 @@
         <button type="button" onclick="findNext()">다음 형제 찾기</button>
         <button type="button" onclick="findPrev()">이전형제 찾기</button>
         <button type="button" onclick="findChildren()">모든 자식찾기</button>
+        <script src="jQuery.js"></script>
     </body>
 </html>

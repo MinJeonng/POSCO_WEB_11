@@ -75,8 +75,27 @@ function prependJquery() {
     $('.colors').prepend('<li>처음으로 추가된 jquery</li>');
 }
 
-//before, after 해보기
+//before, after
 
+function beforeJs() {
+    let green = document.querySelector('.green');
+    let li = document.createElement('li');
+    li.textContent = '추가된 js';
+    green.before(li);
+}
+function beforeJquery() {
+    $('.navy').before('<li>추가된 jQuery</li>');
+}
+
+function afterJs() {
+    let navy = document.querySelector('.navy');
+    let li = document.createElement('li');
+    li.textContent = '추가된 js(after)';
+    navy.after(li);
+}
+function afterJquery() {
+    $('.orange').after('<li>추가된 jQuery(after)</li>');
+}
 //요소 삭제하기
 
 function removeJs() {
@@ -99,17 +118,17 @@ function emptyJquery() {
 //요소 찾기
 
 function findParent() {
-    console.log($('.child2').parents());
+    console.log($('.child2').parent()); //parent
 }
 function findParents() {
-    console.log($('.child2').parents());
+    console.log($('.child2').parents()); //ancestor, parent, child1
 }
 function findNext() {
-    console.log($('.child2').next());
+    console.log($('.child2').next()); // child3
 }
 function findPrev() {
-    console.log($('.child2').prev());
+    console.log($('.child2').prev()); //child1
 }
 function findChildren() {
-    console.log($('.child2').findChildren());
+    console.log($('.child2').children()); // child1, child2
 }

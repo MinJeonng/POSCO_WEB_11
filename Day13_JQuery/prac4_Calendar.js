@@ -16,6 +16,7 @@ $(document).ready(function () {
             $('#' + date).append(eventDiv);
         }
     });
+    // '초기화' 버튼 클릭 이벤트
     $('#reset').click(function () {
         // 모든 이벤트 내용 제거(input 두개 모두 같이 제거)
         $('.event').remove();
@@ -37,7 +38,7 @@ $(document).ready(function () {
         let body = $('<div>').addClass('body');
 
         // 요일 표시를 바디의 첫 번째 행으로 추가
-        let dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+        let dayNames = ['월', '화', '수', '목', '금', '토', '일'];
         let row = $('<div>').addClass('row');
         for (let i = 0; i < 7; i++) {
             let dayNameDiv = $('<div>').addClass('day-name').text(dayNames[i]);
@@ -60,7 +61,6 @@ $(document).ready(function () {
         }
 
         calendar.append(body);
-        // '초기화' 버튼 클릭 이벤트
     }
 });
 

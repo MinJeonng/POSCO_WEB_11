@@ -1,3 +1,4 @@
+// 리더님이 해주신 방법으로 다시 수정
 $(document).ready(function () {
     let calendar = $('#calendar');
     let currentDate = new Date();

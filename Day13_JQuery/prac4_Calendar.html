@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Calendar</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <link rel="stylesheet" href="prac4_Calendar.css" />
     </head>
@@ -11,12 +11,13 @@
     <body>
         <div>
             <label for="type">날짜 : </label>
-            <input type="text" id="date" />
+            <input type="text" id="date" readonly />
         </div>
         <div>
             <label for="content">내용 : </label>
             <input type="text" id="content" />
         </div>
+        <br />
         <button type="button">작성</button>
         <button type="button" id="reset">초기화</button>
 

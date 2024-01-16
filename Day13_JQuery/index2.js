@@ -40,6 +40,7 @@ $('.numbers').mouseover(function () {
 //         $(this).removeClass('hover');
 //     }
 // );
+
 $('.div-hover').hover(function () {
     $(this).toggleClass('hover');
 }); //올리고 떼고가 두번 class로 안받아도 한번에 가능

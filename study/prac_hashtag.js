@@ -13,7 +13,7 @@ $('.hashtag').click(function () {
         if (hashtags.includes(clickedHashtag)) {
             //선택한 해시태그가 그걸 담고있는 배열에 있는지 확인
             const index = hashtags.indexOf(clickedHashtag);
-            hashtags.splice(index, 1); // 이미 선택된 해시태그를 배열에서 제거, 선택된 해시태그를 누른다는건 취소한다는 의미이므로.
+            hashtags.splice(index, 1); // 이미 선택된 해시태그를 배열에서 제거, 선택된 해시태그를 누른다는건 취소한다는 의미이기 때문이다.
         } else {
             hashtags.push(clickedHashtag); // 배열에 없는 새로 선택한 해시태그를 배열에 추가
         }

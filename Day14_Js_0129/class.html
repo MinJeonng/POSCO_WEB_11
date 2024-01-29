@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //class
+            class Dog {
+                //생성자 : 클래스의 인스턴스 생성시 생성(선택사항)
+                constructor(name, age) {
+                    //속성 == 변수
+                    this.name = name; //name이라는 값을 this.name에다가 넣어준 것
+                    this.age = age;
+                }
+                //메소드
+                bark() {
+                    console.log(this.name, '멍멍월월');
+                }
+                eat() {
+                    console.log('give me some food');
+                }
+            }
+            const dog1 = new Dog('beki', 8); //함수를 불러오자
+            const dog2 = new Dog('쿵이');
+            dog1.bark();
+            dog1.eat();
+            dog2.bark();
+
+            //상속 : 부모는 자식보다 더 많은걸 가지고 있는 개념
+            class House {
+                //method
+                door() {
+                    console.log('문을 열자');
+                }
+                window() {
+                    console.log('추우니 창문 닫읍시다.');
+                }
+            }
+            const house1 = new House();
+            house1.door();
+            class Apartment extends House {
+                elavator() {
+                    console.log('조심히 타세요.');
+                }
+            }
+            const Apartment1 = new Apartment();
+            Apartment1.door(); //아파트에는 door메소드가 없지만 상속받았으므로 실행됌
+            Apartment1.elavator();
+            Apartment1.window();
+        </script>
+    </body>
+</html>

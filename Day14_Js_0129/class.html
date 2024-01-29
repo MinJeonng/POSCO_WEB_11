@@ -25,9 +25,9 @@
             }
             const dog1 = new Dog('beki', 8); //함수를 불러오자
             const dog2 = new Dog('쿵이');
-            dog1.bark();
-            dog1.eat();
-            dog2.bark();
+            dog1.bark(); //베키 멍멍월월
+            dog1.eat(); //give me some food
+            dog2.bark(); //쿵이 멍멍월월
 
             //상속 : 부모는 자식보다 더 많은걸 가지고 있는 개념
             class House {
@@ -40,16 +40,16 @@
                 }
             }
             const house1 = new House();
-            house1.door();
+            house1.door(); //문을 열자
             class Apartment extends House {
                 elavator() {
                     console.log('조심히 타세요.');
                 }
             }
             const Apartment1 = new Apartment();
-            Apartment1.door(); //아파트에는 door메소드가 없지만 상속받았으므로 실행됌
-            Apartment1.elavator();
-            Apartment1.window();
+            Apartment1.door(); //아파트에는 door메소드가 없지만 상속받았으므로 실행됌 //문을 열자
+            Apartment1.elavator(); //조심히 타세요.
+            Apartment1.window(); //추우니 창문 닫읍시다.
 
             //class 실습
             class Shape {

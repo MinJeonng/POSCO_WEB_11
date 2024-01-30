@@ -47,6 +47,18 @@
             }
             goMart();
             pickFood().then(pay); //성공할때 then이고, 이걸 받아와야하니까.
+
+            /*
+    
+            async function exec() {
+                goMart();
+                await pickFood();
+                pay();
+            }
+            let product;
+            let price;
+            exec();
+            */
         </script>
     </body>
 </html>

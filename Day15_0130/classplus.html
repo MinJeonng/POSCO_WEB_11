@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //상속 : 부모는 자식보다 더 많은걸 가지고 있는 개념
+            class House {
+                constructor(str) {
+                    this.str = str;
+                }
+                //method
+                door() {
+                    console.log('문을 열자');
+                }
+                window() {
+                    console.log('추우니 창문 닫읍시다.');
+                }
+            }
+            const house1 = new House();
+            house1.door(); //문을 열자
+            class Apartment extends House {
+                constructor(str, floor) {
+                    //super(): 자식 클래스에서 생성자를 정의할때 super 키워드를 사용하여 부모 클래스의 생성자를 호출
+
+                    super(str); //super를 통해 부모 생성자에 접근함 , 이때 순서가 항상 this위에 있어야함(constructor의 바로 밑에 있어야함.)
+                    this.floor = floor; //부모것을 가져가도 되고, 직접 만들어도 된다., 직접 재정의 가능.
+                }
+                elavator() {
+                    console.log('조심히 타세요.');
+                }
+                //메서드 오버라이딩 : 자식 클래스에서 부모 클래스의 메소드를 재정의하는 것
+                //super 키워드를 사용하여 부모 클래스의 메소드에 접근
+                window() {
+                    super.window(); //부모에 있는 window
+                    console.log('창문을 슬라이딩 합니다.');
+                }
+            }
+            const Apartment1 = new Apartment('자이');
+            Apartment1.door(); //아파트에는 door메소드가 없지만 상속받았으므로 실행됌 //문을 열자
+            Apartment1.elavator(); //조심히 타세요.
+            Apartment1.window(); //추우니 창문 닫읍시다. , 창문을 슬라이딩 합니다.
+        </script>
+    </body>
+</html>

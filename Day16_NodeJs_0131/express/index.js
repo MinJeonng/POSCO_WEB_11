@@ -11,10 +11,10 @@ const port = 8000;
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-//(3) 정적파일 불러오기 (css 등.. css도 정적파일이니까)
+//(3) 정적파일 불러오기
 app.use('/public', express.static(__dirname + '/public'));
 
-//(1)
+//(1) 서버에 보내기 작업
 //  '/' : localhost:8000/ 형태임, 포트뒤에 생기는 것을 설정할 수 있음
 // 매개변수에 request, response 필수
 app.get('/', (req, res) => {
@@ -29,9 +29,21 @@ app.get('/kdt', (req, res) => {
     res.render('test', { name: 'sally' }); //알아서 test.ejs를 찾아갈 것, 서버에서 어떤 값까지 보내주겠다 하면 객체로!렌더링해서 받는 값들은 모두 객체로!
 });
 
-//(4)
+//(4) 구구단
 app.get('/gugudan', (req, res) => {
     res.render('gugudan', { data: 2, dan: 1, leng: [1, 2, 3, 4, 5, 6, 7, 8, 9] }); //서버로 데이터 보내기
+});
+
+//(5) 과일
+app.get('/fruits', (req, res) => {
+    res.render('fruits', {
+        fruits: [
+            { name: 'apple', kor: '사과' },
+            { name: 'banana', kor: '바나나' },
+            { name: 'grape', kor: '포도' },
+            { name: 'peach', kor: '복숭아' },
+        ],
+    });
 });
 
 //서버 시작되는 listen 은 항상 하단에 위치

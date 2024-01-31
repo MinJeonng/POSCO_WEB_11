@@ -58,7 +58,8 @@
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {
                         let result = n - 1;
-                        resolve(result);
+                        //resolve(result);
+                        reject(new Error('의도적 에러'));
                     }, 500);
                 });
             }
@@ -73,6 +74,10 @@
                 })
                 .then((res2) => {
                     console.log('sub : ', res2);
+                })
+                .catch((err) => {
+                    console.log('실패');
+                    console.log(err);
                 });
         </script>
     </body>

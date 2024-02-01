@@ -13,7 +13,7 @@ app.use(express.json()); //json방식
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-//router (페이지 생성)
+//router (페이지 생성), 이건 라우터지 도메인 or url이 아니다.
 app.get('/', (req, res) => {
     res.render('index'); //index라는 ejs파일을 생성하겠다.
 });

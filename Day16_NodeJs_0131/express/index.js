@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 //(2) 렌더링(템플릿 엔진을 쓰고 렌더링)
 app.get('/kdt', (req, res) => {
     //http://localhost:8000/kdt 하면 test.ejs에서 쓴 내용이 나옴
-    //render(): 뷰 엔진 렌더링
+    //render('파일명'): 뷰 엔진 렌더링
     res.render('test', { name: 'sally' }); //알아서 test.ejs를 찾아갈 것, 서버에서 어떤 값까지 보내주겠다 하면 객체로!렌더링해서 받는 값들은 모두 객체로!
 });
 

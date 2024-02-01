@@ -6,7 +6,7 @@ const app = express();
 const PORT = 8000;
 
 //body-parser
-app.use(express.urlencoded({ extended: true })); //x-www-form-urlencoded 방식
+app.use(express.urlencoded({ extended: true })); //x-www-form-urlencoded 방식, 그래서 객체 형태로 결과나옴
 app.use(express.json()); //json방식
 
 //view-engine
@@ -17,9 +17,16 @@ app.set('views', './views');
 app.get('/', (req, res) => {
     res.render('index'); //index라는 ejs파일을 생성하겠다.
 });
+
 app.get('/getForm', (req, res) => {
     //get 방식 :req.query
     console.log(req.query);
+    res.render('result', { title: 'GET요청 결과', userinfo: req.query }); //결과페이지, 객체로 해서 유저가 쓴 info를 프론트로 보내줌
+});
+app.post('/postForm', (req, res) => {
+    //post 방식 : req.body
+    console.log(req.body);
+    res.render('result', { title: 'POST요청 결과', userinfo: req.body });
 });
 
 //서버실행

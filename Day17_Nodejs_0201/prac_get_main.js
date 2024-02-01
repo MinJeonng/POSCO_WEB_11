@@ -11,13 +11,29 @@ app.use(express.json()); //json방식
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+//그저 페이지를 열어주는 역할
 app.get('/', (req, res) => {
     res.render('prac_get');
 });
 
+//데이터 전송받는 역할
 app.get('/getFormPrac', (req, res) => {
-    console.log(req.query);
-    res.render('prac_get_result', { title: '회원정보', userinfo: req.query });
+    const { name, gender, year, month, day, interests, color, email } = req.query;
+    //userInfo: req.body : 객체로 받는다.
+    res.render('prac_result', {
+        //동일한 result 파일에서 확인가능
+        title: '회원정보',
+        userInfo: {
+            name,
+            gender,
+            year,
+            month,
+            day,
+            interests,
+            color: { result: false, color: null },
+            email: { reult: false, email: null },
+        },
+    }); //데이터 정보 전달받기
 });
 
 app.listen(PORT, () => {

@@ -32,7 +32,7 @@ app.post('/postFormPrac', (req, res) => {
             interests,
             //key-value 형태에서 key값과 value 의 변수가 동일할때는 하나로 합치기 가능. 즉, color:color가 아니라 color만 써도 됌
             color: { result: true, color: color },
-            email: { reult: true, email: email },
+            email: { result: true, email: email },
         }, //
     }); //데이터 정보 전달받기
 });

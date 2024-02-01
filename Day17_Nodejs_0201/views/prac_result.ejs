@@ -12,8 +12,8 @@
         <div>성별 : <span><%= userInfo.gender%></span></div>
         <div>생년월일 : <span><%= userInfo.year%>-<%= userInfo.month%>-<%= userInfo.day%></span></div>
         <div>관심사 : <span><%= userInfo.interests%></span></div>
+        <!-- if문은 기본값이 true일때니까 굳이 === 'true'는 안써줘도 됌 -->
         <% if(userInfo.color.result){ %>
-
         <div>좋아하는 색상 : <span><%= userInfo.color%></span></div>
         <% } %> <% if(userInfo.email.result){ %>
         <div>이메일 : <span><%= userInfo.email%></span></div>

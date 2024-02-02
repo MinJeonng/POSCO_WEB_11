@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- func으로 onclick으로 제출을 하는 방법과 아래와 같은 방식 두가지가 있음 -->
+        <form onsubmit="submitFunc(event)" name="button-form">
+            <label for="name">이름</label>
+            <input type="text" id="name" required /><br />
+            <label for="email">이메일</label>
+            <input type="email" id="email" required /><br />
+            <!-- button에 onclick을 쓰는게 아니라면 type이 submit이어야함 -->
+            <button type="submit">제출</button>
+        </form>
+        <script>
+            function submitFunc(event) {
+                event.preventDefault(); //기본 제출 동작을 막아줌
+                console.log(event);
+                const form = document.forms['button-form'];
+                console.log(form);
+                console.log(form.name);
+                console.log(form.email);
+                console.log(form.name.value); //값이 보임
+                console.log(form.email.value);
+                console.log(document.getElementById('name').value); //name의 값을 하나만 가지고 오고 싶으면 이 문장만 써도 됌
+            }
+        </script>
+    </body>
+</html>

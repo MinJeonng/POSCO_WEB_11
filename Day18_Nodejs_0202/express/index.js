@@ -42,6 +42,40 @@ app.get('/ajax', (req, res) => {
     res.send({ result: true, name: `${name}님`, email: ` 이메일은 ${email}입니다.` }); //프론트로 보내는 데이터
 });
 
+app.post('/ajax', (req, res) => {
+    console.log('요청값', req.body);
+    const { name, email } = req.body;
+    res.send({ result: true, username: name, email }); //{username:name , email:email} 이라는 의미 , 이름 같은건 생략가능
+});
+
+//axios
+app.get('/axios', (req, res) => {
+    console.log('요청값', req.query); //req.query 자체가 json형태여서 중괄호로 되어있어서 그냥 보내줘도 됌
+    res.send(req.query); //요청한거 그대로 보냄
+});
+
+app.post('/axios', (req, res) => {
+    console.log('요청값', req.body);
+    const { username, email } = req.body;
+    const data = {
+        name: `안녕하세요 ${username}님`,
+        address: `주소는 ${email}입니다`,
+    };
+    res.send(data);
+});
+
+//fetch
+//querystring은 데이터 이기때문에 index.js에서 url 전부를 써주지 않아도 됌
+app.get('/fetch', (req, res) => {
+    console.log('요청값', req.query);
+    res.send(req.query);
+});
+
+app.post('/fetch', (req, res) => {
+    console.log('요청값', req.body);
+    res.send(req.body);
+});
+
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });

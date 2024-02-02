@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- axios cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <form name = "register-form">
+    <label for="name" name="name">이름</label>
+    <input type="text" name="name" id="name" />
+    <fieldset>
+      <legend>성별</legend>
+      <label for="male">
+        <input type="radio" name="gender" value="남자" id = "male" required>남자</input>
+      </label>
+      <label for="female">
+        <input type="radio" name="gender" value="여자" id = "female" required>여자</input>
+      </label>
+  </fieldset>
+    <fieldset>
+        <legend>생년월일</legend>
+        <!-- <input type="date" name="birth" id="birth"> -->
+        <select name="year" id="year">
+          <optgroup label="년">
+            <% for(let i =1970;i <=2024 ; i++){ %>
+               <option value="<%= i%>"><%= i%></option>
+           <%  } %>
+          </optgroup>
+        </select>
+        <label for = "year">년</label>
+        <select name="month" id="month">
+          <optgroup label="월">
+            <% for(let i =1;i <= 12; i++){ %>
+               <option value="<%= i%>"><%= i%></option>
+           <%  } %>
+          </optgroup>
+           
+        </select>
+        <label for = "month">월</label>
+        <select name="day" id="day">
+          <optgroup label="일">
+            <% for(let i =1;i <= 31; i++){ %>
+               <option value="<%= i%>"><%= i%></option>
+           <%  } %>
+          </optgroup>
+        </select>
+        <label for = "day">일</label>
+    </fieldset>
+    <fieldset>
+      <legend>관심사</legend>
+      <label for="trip">
+        <input type="checkbox" name="interests" id = "trip" value="여행">여행</input>
+      </label>
+      <label for="fashion">
+        <input type="checkbox" name="interests" id = "fashion"value ="패션">패션</input>
+      </label>
+      <label for="food">
+        <input type="checkbox" name="interests" value="음식" id = "food">음식</input>
+      </label>
+  </fieldset>
+    <button type="button" onclick = "axiosGetPrac()">회원가입</button>
+</form>
+<div class = "result"></div>
+  <script>
+    const resultBox = document.querySelector('.result')
+    function axiosGetPrac(){
+      const form = document.forms['register-form'];
+      const interests = [];
+      const checked = form.querySelectorAll('input[type="checkbox"]:checked');
+      checked.forEach((elem) => {
+        interests.push(elem.value);
+      });
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+        year : form.year.value,
+        month : form.month.value,
+        day : form.day.value,
+        interests, 
+     };
+      axios({
+        method : 'get',
+        url : '/axios',
+        params : data,
+     }).then((res)=>{
+          console.log('res',res)
+          resultBox.textContent = `회원가입이 완료되었습니다. 성함 : ${res.data.name} 
+          성별 : ${res.data.gender} 
+          생년월일 : ${res.data.year}년 ${res.data.month}월 ${res.data.day}일
+          관심사 : ${res.data.interests}`
+     })
+  }
+    </script>
+  </body>
+</html>

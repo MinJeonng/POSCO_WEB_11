@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>FORM 싱글연습</h1>
+        <!-- 파일업로드때는 post방식  -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="userfile" /><br />
+            <input type="text" name="title" /><br />
+            <button type="submit">업로드</button>
+        </form>
+    </body>
+</html>

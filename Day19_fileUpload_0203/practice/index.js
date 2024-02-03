@@ -20,8 +20,8 @@ const uploadDetail = multer({
         },
         filename(req, file, done) {
             const ext = path.extname(file.originalname);
-            const newName = req.body.id + ext;
-            // path.basename(file.originalname, ext)
+            const newName = req.body.id + ext; //확장자명 : id+확장자
+
             done(null, newName);
         },
     }),

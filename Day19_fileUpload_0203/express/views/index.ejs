@@ -45,13 +45,13 @@
             const resultBox = document.querySelector('.resultBox');
             function fileUpload() {
                 const file = document.querySelector('#userfile');
-                //파일에 접근하기 위해서 file.files[0]을 사용하고, file.files는 배열을 반환하며 우리가 원하는 것은
-                //첫번째 요소이기 때문에 [0]를 해주는 것
+                //파일에 접근하기 위해서 file.files[0]을 사용
+                //file.files는 배열을 반환하며 우리가 원하는 것은 첫번째 요소이기 때문에 [0]를 해주는 것
                 console.log(file.files[0]);
 
                 //FormData : 자바스크립트 내장 객체이고 폼 데이터를 생성해줌
                 const formData = new FormData();
-                //append(key, value) - key 자리에는 차피 백엔드로 보내는거니까 이름 노상관
+                //append(key, value) - key 자리에는 차피 백엔드로 보내는거니까 이름 상관없다.
                 formData.append('title', document.querySelector('#title').value);
                 formData.append('file', file.files[0]); //file은 가장 마지막에 써야함. 위에다가 일반데이터를 써주고 파일은 마지막!!!!
 
@@ -60,11 +60,11 @@
                     url: '/upload/axios',
                     data: formData,
                     headers: {
-                        'Content-Type': 'multipart/form-data', //동적업로드할때 비동기에는 form에 넣어줬지만 동적에선 꼭 여기에서 넣어줘야함!
+                        'Content-Type': 'multipart/form-data', //동적업로드할때 비동기에는 form에 넣어줬지만 동적에선 꼭 여기에서 넣어줘야한다.
                     },
                 }).then((res) => {
                     console.log('res', res);
-                    resultBox.innerHTML = `<p> 이름은 ${res.data.title.title}</p><img src = ${res.data.file.path}>`; //html에 바로 보여지게
+                    resultBox.innerHTML = `<p> 이름은 ${res.data.title.title}</p><img src = ${res.data.file.path} width = "300px" height = "300px">`; //html에 바로 보여지게
                 });
             }
         </script>

@@ -6,6 +6,7 @@ const PORT = 8000;
 
 app.set('view engine', 'ejs');
 //정적파일생성
+//유저가 이미지를 업로드하면 저장될 파일
 //http://localhost:8000/uploads/파일명
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
@@ -23,9 +24,10 @@ const uploadDetail = multer({
     storage: multer.diskStorage({
         //destination : 업로드할 파일을 저장할 폴더를 지정
         destination(req, file, done) {
-            done(null, 'uploads/'); //에러처리 : null, done은 콜백함수
+            done(null, 'uploads/'); //에러처리 : null(설정하지 않음), done은 콜백함수
         },
         //filename : 파일이름 결정(요청객체, 업로드된 파일 객체, 콜백함수 순서)
+        //여기서 file은 index.ejs에서 정의한 함수(본인이 설정한 이름으로 기재)
         filename(req, file, done) {
             //extname() : 확장자를 추출
             const ext = path.extname(file.originalname);
@@ -52,19 +54,20 @@ app.post('/upload', uploadDetail.single('userfile'), (req, res) => {
 });
 //(2) array multi
 app.post('/upload/array', uploadDetail.array('userfiles'), (req, res) => {
-    console.log('file', req.file);
+    console.log('file', req.files); //file이 여러개이므로 꼭 복수형태로 해줘야한다.
     console.log('title', req.body);
 });
 
 //(3) multi ver2
-app.post('/upload/fields', uploadDetail.fields([{ name1: 'userFile1}' }, { name2: 'userFile2 ' }]), (req, res) => {
-    console.log('file', req.file);
+app.post('/upload/fields', uploadDetail.fields([{ name: 'userFile1' }, { name: 'userFile2' }]), (req, res) => {
+    console.log('file', req.files);
     console.log('title', req.body);
 });
 
 //(4) 동적
-//single('프론트에서 보내는 key로 했던 파일값 써주면됌') = formData.append('file', file.files[0]); 이부분
+//single('프론트에서 보내는 key로 했던 파일명') =>> formData.append('file', file.files[0]); 이부분
 app.post('/upload/axios', uploadDetail.single('file'), (req, res) => {
+    console.log('file', req.file);
     res.send({ file: req.file, title: req.body });
 });
 

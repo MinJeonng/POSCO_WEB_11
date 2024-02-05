@@ -5,6 +5,9 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
+
+app.use(express.urlencoded({ extended: true }));
+//정적파일설정
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 const upload = multer({

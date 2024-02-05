@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 app.get('/axiosPost', (req, res) => {
     res.render('post');
 });
+
 //데이터 요청 및 응답
 const id = 'kdt11';
 const pw = '1234';

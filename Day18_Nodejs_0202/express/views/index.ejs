@@ -6,7 +6,6 @@
         <title>Document</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <!-- axios cdn -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <form name="register-form">
@@ -81,7 +80,8 @@
                 //axios
                 axios({
                     method: 'get',
-                    //url : `?name=${form.name.value}&email=${form.email.value}` 이렇게 쓰게 되면 밑에 url, params가 필요없어짐
+                    // url: `?name=${form.name.value}&email=${form.email.value}`,
+                    //이렇게 쓰게 되면 밑에 url, params가 필요없어짐
                     //당연히 post는 안댐
                     url: '/axios',
                     params: data,

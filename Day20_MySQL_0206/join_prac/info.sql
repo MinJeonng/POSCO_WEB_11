@@ -75,6 +75,7 @@ ON a.department_id = b.department_id;
 -- inner join은 양쪽에 있는 데이터만 가져옴. null값이 있으면 출력이 안됌 
 
 
+-- employees가 기준이고 왼쪽에 departments가 붙는 것
 -- left join은 null이 보여짐
 SELECT * 
 FROM employees as a LEFT JOIN departments as b

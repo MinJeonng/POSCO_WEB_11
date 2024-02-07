@@ -40,10 +40,6 @@ const comments = [
 //router
 app.get('/', (req, res) => {
     res.render('index');
-
-    // 이거 나중에 블로깅할때 다 주석해제해서 써
-    // console.log('baba');
-    // //밑의 경로로 내가 env에서 설정한 환경변수에 접근 가능함
     // console.log(process.env); //환경변수에 있는 값들을 모두 보여줌
     // console.log(process.env.NODE);
     // console.log(process.env.NAME);
@@ -62,13 +58,13 @@ app.get('/comments', (req, res) => {
 //전체 리스트의 상세페이지로 이동하는 페이지
 //id :2 누르면 2번에 대한 정보만 나오게 해야함
 // /: 백엔드로 받는주소, 상세내용을 누를때마다 값이 달라짐, page 부분은 이름명 상관없음
-// /:page 는 {page : "값"} 형태, :의 유무 차이가 큼
+// /:page 는 {page : "값"} 형태
 app.get('/comment/:page', (req, res) => {
     console.log(req.params);
     console.log(req.params.page); //값만 표시
     const page = Number(req.params.page);
     //comments 배열의 요소에 접근 => 즉, 객체 하나하나에 접근
-    res.render('comment', { data: comments[page - 1] }); //데이터가  1로 오면 0번째 첫번째 배열 가져오니까.
+    res.render('comment', { data: comments[page - 1] }); //첫번째 배열의 데이터를 쓰려면 -1을 해줘야하고, 데이터가 1로 오면 0번째(=첫번째)배열을 가져와야 한다.
 });
 
 app.listen(PORT, () => {

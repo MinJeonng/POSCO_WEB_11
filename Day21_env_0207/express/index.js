@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 //해당폴더의 index.js 생략가능, 아래 두행은 동일한 의미
 const router = require('./routes/index');
 // const router = require('./routes');
-app.use('/', router); // /뒤에 무엇을 붙이든간에 router 파일을 보여주는 공통적인 이름이다. /board 면 /board/comment 이런식
+app.use('/', router); // /뒤에 무엇을 붙이든간에 router 파일을 보여주는 공통적인 이름이다. /board 라고 설정을 하면, /board/comment 이런식
 
 // db 함수로 만든거 실습
 const userRouter = require('./routes/user');

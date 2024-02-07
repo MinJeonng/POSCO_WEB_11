@@ -13,8 +13,9 @@
           <%  for(let i = 0; i<list.length; i++){ %>
                   <li>
                     <b><%= list[i].userid%></b>
-                    <!-- 여기서 Id는 데이터베이스에서 오는 id, 즉 내가 임시db만든 거 -->
+                    <!-- 여기서 Id는 데이터베이스에서 오는 id, 즉 임시db만든 파일 -->
                     <a href="/comment/<%= list[i].id%>"><%= list[i].comment%></a>
+                    <!-- list[i].id : controller에서 list로 나오게끔 지정한 데이터의 id추출 -->
                   </li>
          <%   } %>
         </ul>

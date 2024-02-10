@@ -15,7 +15,7 @@ const visitorRouter = require('./routes/visitor');
 app.use('/api/visitor', visitorRouter); //data를 주고받는 router
 
 //오류처리
-app.use('*', (req, res) => {
+app.get('*', (req, res) => {
     res.status(404).render('404');
 });
 

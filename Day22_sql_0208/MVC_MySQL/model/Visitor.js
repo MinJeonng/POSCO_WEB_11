@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise'); //모듈 가져옴
 const { get } = require('../routes/visitor');
 //mysql 연결
 //host : 주소
-// 그 밑에는 내가 가지고 올 db의 주소들!
+// 그 밑에는 가지고 올 db의 주소들이다.
 const getConn = async () => {
     return await mysql.createConnection({
         host: 'localhost',

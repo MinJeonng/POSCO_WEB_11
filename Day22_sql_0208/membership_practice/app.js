@@ -8,11 +8,9 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 
 //router
-const pageRouter = require('./routes/Rpage');
-app.use('/', pageRouter);
 
 const userRouter = require('./routes/Ruser');
-app.use('/api/user', userRouter);
+app.use('/user', userRouter);
 
 //오류처리
 app.get('*', (req, res) => {

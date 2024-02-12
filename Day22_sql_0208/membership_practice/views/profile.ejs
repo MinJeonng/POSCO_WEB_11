@@ -51,6 +51,34 @@
                     alert('비밀번호가 일치하지 않습니다.');
                 }
             }
+            // async function update() {
+            //     const form = document.forms['profile_form'];
+            //     const name = form.name.value;
+            //     const pw = form.pw.value;
+            //     const checkPw = form.checkPw.value;
+            //     const id = form.id.value;
+            //     const userId = form.userId.value;
+
+            //     if (pw === checkPw) {
+            //         try {
+            //             const res = await axios.post(`/user/profile/${id}`, {
+            //                 id: id,
+            //                 name: name,
+            //                 userId: userId,
+            //                 pw: pw,
+            //             });
+            //             console.log('res', res);
+            //             alert(`${name}님 회원정보가 수정되었습니다. 다시 로그인 해주세요.`);
+            //             window.location.href = '/user/signin';
+            //         } catch (error) {
+            //             console.error('Error while sending request:', error);
+            //             alert('회원정보 수정 실패');
+            //         }
+            //     } else {
+            //         alert('비밀번호가 일치하지 않습니다.');
+            //     }
+            // }
+
             function deleteData() {
                 const form = document.forms['profile_form'];
                 const id = form.id.value;
@@ -72,6 +100,28 @@
                     alert('비밀번호가 일치하지 않습니다.');
                 }
             }
+            // async function deleteData() {
+            //     const form = document.forms['profile_form'];
+            //     const id = form.id.value;
+            //     const pw = form.pw.value;
+            //     const checkPw = form.checkPw.value;
+
+            //     if (pw === checkPw) {
+            //         try {
+            //             const res = await axios.post(`/user/profile/${id}`, {
+            //                 id: id,
+            //             });
+            //             console.log('res', res);
+            //             alert('회원탈퇴가 되었습니다. 감사합니다.');
+            //             window.location.href = '/';
+            //         } catch (error) {
+            //             console.error('Error while sending request:', error);
+            //             alert('회원탈퇴 실패');
+            //         }
+            //     } else {
+            //         alert('비밀번호가 일치하지 않습니다.');
+            //     }
+            // }
         </script>
     </body>
 </html>

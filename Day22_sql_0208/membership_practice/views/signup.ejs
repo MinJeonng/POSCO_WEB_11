@@ -49,6 +49,31 @@
                     alert('비밀번호가 일치하지 않습니다.');
                 }
             }
+            // async function handleSignUp() {
+            //     const form = document.forms['signup'];
+            //     const userId = form.userId.value;
+            //     const name = form.name.value;
+            //     const pw = form.pw.value;
+            //     const checkPw = form.checkPw.value;
+            //     console.log('form전송(데이터 보내기): name', name, 'userId', userId, 'pw', pw);
+            //     if (pw === checkPw) {
+            //         try {
+            //             const res = await axios.post('/user/signup', {
+            //                 name: form.name.value,
+            //                 userId: form.userId.value,
+            //                 pw: form.pw.value,
+            //             });
+            //             console.log('res', res);
+            //             alert(`${name}님 환영합니다. 회원가입이 완료되었습니다.`);
+            //             window.location.reload();
+            //         } catch (error) {
+            //             console.error(error);
+            //             alert('회원가입 중 오류가 발생했습니다.');
+            //         }
+            //     } else {
+            //         alert('비밀번호가 일치하지 않습니다.');
+            //     }
+            // }
         </script>
     </body>
 </html>

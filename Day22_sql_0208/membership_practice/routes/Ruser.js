@@ -3,18 +3,25 @@ const controller = require('../controller/Cuser');
 
 const router = express.Router();
 
-//GET localhost:8000/user/
-router.get('/', controller.index);
-//GET localhost:8000/user/signup
-router.get('/signup', controller.signup);
-//POST localhost:8000/user/signup
-router.post('/signup', controller.post_signup);
+//회원가입 페이지 렌더링
+router.get('/signup', controller.getSignUp);
 
-router.get('/signin', controller.signin);
-router.post('/signin', controller.post_signin);
+//회원가입 처리(POST 요청)
+router.post('/signup', controller.postSignUp);
 
-router.post('/profile', controller.post_profile);
-router.patch('/profile/edit', controller.edit_profile);
-router.delete('/profile/delete', controller.delete_profile);
+//로그인 페이지 렌더링
+router.get('/signin', controller.getSignIn);
 
-export default router;
+//로그인 처리(POST 요청)
+router.post('/signin', controller.postSignIn);
+
+//프로필 페이지 렌더링
+router.get(`/profile/:id`, controller.getProfile);
+
+//프로필 업데이트
+router.post(`/profile/:id`, controller.postUpdate);
+
+//프로필 삭제
+router.post(`/profile/:id`, controller.postDelete);
+
+module.exports = router; //외부로 라우터를 보낸다.

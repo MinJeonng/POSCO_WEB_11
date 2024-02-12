@@ -1,63 +1,61 @@
 const User = require('../model/Muser');
 
-const index = (req, res) => {
-    res.render('index');
-};
-const signup = (req, res) => {
+exports.getSignUp = (req, res) => {
     res.render('signup');
 };
-const signin = (req, res) => {
-    res.render('signin');
-};
-const post_signup = async (req, res) => {
-    try {
-        await User.post_signup(req.body);
-        res.send({ result: true });
-    } catch (error) {
-        console.log(error);
-        res.send({ result: false });
-    }
-};
-const post_signin = async (req, res) => {
-    try {
-        const result = await User.post_signin(req.body);
-        console.log('result', result);
-        if (result.length > 0) {
-            res.send({ result: true, data: result[0] });
-        } else {
-            res.send({ result: false, data: null });
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-const post_profile = async (req, res) => {
-    try {
-        const result = await User.post_profile(req.body);
-        if (result.length > 0) {
-            res.render('profile', { data: result[0] });
-        } else {
-            res.redirect('/user/signin');
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-const edit_profile = async (req, res) => {
-    try {
-        await User.edit_profile(req.body);
-        res.status(200).send({ result: true });
-    } catch (error) {
-        console.log(error);
-    }
+
+exports.postSignUp = (req, res) => {
+    console.log('회원가입 Brower 데이터 받아옴req1: ', req.body);
+    User.postSignUp(req.body, (result) => {
+        console.log('회원가입 정보3: ', req.body);
+        res.send({ result: result, msg: '회원가입 완료' });
+    });
 };
 
-const delete_profile = async (req, res) => {
-    try {
-        await User.delete_profile(req.body.id);
-        res.send({ result: true });
-    } catch (error) {
-        console.log(error);
-    }
+exports.getSignIn = (req, res) => {
+    res.render('signin');
 };
-module.exports = { index, signup, signin, post_signin, post_signup, post_profile, edit_profile, delete_profile };
+
+exports.postSignIn = (req, res) => {
+    console.log('postSingin', req.body);
+    User.postSignIn(req.body, (result) => {
+        if (result.length > 0) {
+            res.send({
+                result: true,
+                data: result[0],
+                message: `${result[0].name}님, 환영합니다.`,
+            });
+            console.log('회원가입 정보: ', result);
+        } else {
+            res.send({ result: false, data: null, message: '로그인 실패' });
+        }
+    });
+};
+
+exports.getProfile = (req, res) => {
+    const userId = req.params.id;
+    User.getProfile(req, (userProfile) => {
+        if (userProfile !== null) {
+            res.render('profile', { userId, profileData: userProfile });
+            console.log({ userId, profileData: userProfile });
+        } else {
+            res.render('profile', { userId, profileData: null });
+        }
+    });
+};
+
+exports.postUpdate = (req, res) => {
+    console.log('Controller', req.body);
+    User.postUpdate(req.body, (result) => {
+        console.log('회원정보 업데이트: ', req.body);
+        res.send({ result: result, msg: '회원정보 업데이트 완료' });
+    });
+};
+
+exports.postDelete = (req, res) => {
+    console.log('delete', req.body);
+    User.postDelete(req.body, (result) => {
+        console.log('회원 탈퇴:', req.body);
+        res.send({ result: result, msg: '회원 탈퇴' });
+    });
+};

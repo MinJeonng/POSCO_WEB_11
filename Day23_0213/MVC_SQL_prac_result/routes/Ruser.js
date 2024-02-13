@@ -5,7 +5,7 @@ const router = express.Router();
 
 ///localhost:8000/api/user
 //POST /signUp 회원가입
-router.post('/signUp', controller.signUp);
+router.post('/signUp', controller.CsignUp);
 //POST /login 로그인
 router.post('/login', controller.Clogin);
 //GET /info 회원정보

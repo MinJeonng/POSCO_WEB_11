@@ -37,7 +37,7 @@ const conn = mysql.createPool({
     connectionLimit: 15, //최대 연결수 (기본값 10)
 });
 
-exports.signUp = async (data) => {
+exports.MsignUp = async (data) => {
     //data : req.body
     const query = `INSERT INTO user (userid, pw, username) VALUES (?,?,?)`;
     const [result] = await conn.query(query, [data.id, data.pw, data.username]);

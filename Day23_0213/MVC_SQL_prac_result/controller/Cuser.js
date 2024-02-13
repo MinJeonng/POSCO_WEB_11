@@ -1,9 +1,9 @@
 const User = require('../model/Muser');
 
 //회원가입
-exports.signUp = async (req, res) => {
+exports.CsignUp = async (req, res) => {
     console.log(req.body); //post니까 body
-    const result = await User.signUp(req.body); //Muser에서 정의한 data가 req.body인거임
+    const result = await User.MsignUp(req.body); //Muser에서 정의한 data가 req.body인거임
     console.log('signup:', result);
     res.json({ result: true });
 };
@@ -15,7 +15,7 @@ exports.Clogin = async (req, res) => {
     console.log('login', result);
     if (result.length >= 1) {
         //한글자 이상이면 성공
-        res.json({ result: true, message: '로그인 성공', id: result[0].id }); //프론트에만 보여주는 결과
+        res.json({ result: true, message: '로그인 성공', data: result[0] }); //프론트에만 보여주는 결과, id: result[0].id
     } else {
         res.json({ result: false, message: '로그인 실패', id: null });
     }

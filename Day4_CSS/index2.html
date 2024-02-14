@@ -1,0 +1,40 @@
+<!-- 속성 선택자 실습 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자 실습</title>
+  <style>
+    [disabled]{
+      background-color: red;
+    }
+    [placeholder = "이름"]{
+      background-color: orange;
+      
+    }
+    /* placeholder나 type은 속성이니까 []로 해야하는 것. */
+    [type]:not([placeholder]){
+      background-color: blue;
+    }
+    /* 위아래 코드가 동일하게 속성이 placeholder가 아닌 태그만 선택함 
+    <input>이라는 태그에서 속성이 placeholder인거에 대한 것만 선택한 것.*/
+    input:not([placeholder]){
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" placeholder="이름" /><br />
+  <input type="password" value="pw" /><br />
+  <input type="text" value = "000-0000-0000" /><br />
+  <input type="text" placeholder="핸드폰" /><br />
+  <input type="text" placeholder = "주민번호" disabled />
+  
+</body>
+</html>
+
+<!-- 조건 
+• Disabled 속성을 가진 태그 선택 à배경 빨간색
+• placeholder 속성이 “이름” 값을 가 지는 태그 선택à배경 오렌지
+• placeholder 속성을 가지지 않는 태그 선택à배경 파란색 -->

@@ -1,0 +1,52 @@
+<!--기본 선택자 연습코드-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--css하는 부분-->
+  <style>
+    /* * 표시 : 전체선택자 */
+    * {
+      color : red;
+    }
+    /* 태그 선택자 
+  만약 <div>를 태그 선택자로 두면 모든 글씨가 다 빨간색으로 변할 것. 왜냐면 부모가 그 속성을 가지고 가게 되니까 자식도 가져가게 되는 것
+  여기선 <div>가 최상단에 있으니까 자식들이 다 물려가는 것--> */
+    li{
+      color : green;
+    }
+    /* 클래스 선택자 : 같은 이름을 가진 class들은 동일하게 적용된다. */
+    .orange{
+      color : orange;
+    }
+    .bgcolor{
+      background-color: aqua;
+      color : black;
+    }
+    /* id선택자  */
+    #orange{
+      /* font-size : 글씨 크기 변경 */
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>사과</li>
+      <li>딸기</li>
+      <!-- id 속성의 orange와 class 속성의 orange는 아예 다른 것 -->
+      <li id = "orange" class = "orange">오렌지</li>
+    </ul>
+    <div>당근</div>
+    <p>토마토</p>
+    <!-- class가 중복해서 들어갈 수 있음 -->
+    <!--class는 뒤에 있는게 적용된다
+    그래서 21행에서 폰트를 오렌지로 했지만 24행에서 블랙으로(뒷순위) 했기 때문에 폰트가 블랙으로 적용된다.-->
+    <span class = "orange bgcolor">오렌지</span>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* 실습 : calc및 line-height 사용하기 */
+body{
+  /* 기본body가 8px정도를 기본으로 가지고 있어서 0으로 초기화 */
+  margin: 0px;
+  background-color: beige;
+  /* 100vh가 전체를 가져감 */
+  height: 100vh;
+
+}
+
+  
+.kdt{
+  
+  background-color: blue;
+  /* 스크린 화면 자체에서 가로너비가 vw, 세로가 vh */
+  width: 10vw; 
+  height: 10vw;
+  color: white;
+  text-align: center;
+  margin: auto;
+  /* 뷰 포인트(화면) 높이의 50%에서 정확히 가운데로 와야하기 떄문에 뷰포트 가로 크기의 1/20(5%)을 뺀 값 */
+  margin-top: calc(50vh - (100vw / 20));
+  /* margin-top: 50vh; -> 이렇게 해도 되긴하지만 정확히 가운데에 오지 않을 수 있음*/
+
+  /* text가 가운데로 오려면 width, height의 값이랑 같게 하면됌 */
+  line-height: 10vw;
+
+  
+}
+

@@ -1,0 +1,27 @@
+/* 투명도 실습 + 예시 */
+.square{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border: solid 1px black;
+  display: inline-block;
+}
+.d-none {
+  display: none;
+  background-color: red;
+} 
+.invisible {
+/* 보이지는 않지만 자리는 차지함, 속성도 사라지긴함 */
+   opacity: 0;
+   visibility: hidden;
+   background-color: orangered; 
+}
+.opacity-0 {
+  /* 보이지는 않지만 자리는 차지함 */
+  opacity: 0;
+  background-color: tomato;
+  } 
+div:hover{
+    opacity: 0;
+  
+}

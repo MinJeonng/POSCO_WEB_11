@@ -1,0 +1,60 @@
+@media screen and (min-width: 768px) {
+    #picture::before {
+        content: '사진1';
+        display: block;
+    }
+    li {
+        padding: 5px;
+    }
+    .menu-list {
+        font-weight: bold;
+        display: flex;
+        background-color: rgb(152, 200, 219);
+        font-weight: bold;
+        width: 100vw;
+        justify-content: center;
+        height: 100px;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .menu-list {
+        height: 60px;
+        flex-direction: column;
+        display: flex;
+        background-color: rgb(131, 191, 215);
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+        font-weight: lighter;
+        text-align: center;
+        width: 100vw;
+    }
+    .header2 {
+        background-color: rgb(185, 225, 242);
+        height: 200px;
+        width: 100vw;
+        z-index: 1;
+    }
+    li {
+        padding: 0.5em 0;
+        text-align: center;
+    }
+    .menu {
+        top: 100px;
+        height: 150px;
+    }
+
+    #picture::after {
+        content: '사진2';
+        display: block;
+    }
+    .logo {
+        text-align: center;
+        line-height: 60px;
+    }
+}
+
+/* 초반에 768px이상일때 가운데로 정렬되는거 해야함 */

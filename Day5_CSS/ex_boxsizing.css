@@ -1,0 +1,15 @@
+div{
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+}
+/* 말그대로 안에 있는 박스 content에다가 적용됌 */
+.contentbox{
+  box-sizing: content-box;
+}
+/* width는 border까지 다 더한게 100px이 되는 것 */
+.borderbox{
+  box-sizing: border-box;
+}

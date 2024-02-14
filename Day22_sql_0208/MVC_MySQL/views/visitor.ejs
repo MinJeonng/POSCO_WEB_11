@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>방명록</h1>
+        <form name="visitor-form">
+            <fieldset>
+                <legend>방명록 등록</legend>
+                <input type="text" id="name" placeholder="방문자 이름" /><br />
+                <input type="text" id="comment" placeholder="방명록 작성" /><br />
+                <button type="button" onclick="registerFunc()">등록</button>
+            </fieldset>
+        </form>
+        <br />
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>작성자</th>
+                    <th>내용</th>
+                    <th>수정</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script>
+            const tbody = document.querySelector('tbody');
+            //js가 열리면서 여기에 있는걸 가장 먼저 보이게한다.  document.ready() 랑 똑같은 역할
+            (async function () {
+                const res = await axios({
+                    method: 'get',
+                    url: '/api/visitor',
+                });
+                console.log(res.data.result);
+                for (let i = 0; i < res.data.result.length; i++) {
+                    const html = `
+                    <tr>
+                        <td>${res.data.result[i].id}</td>
+                        <td>${res.data.result[i].name}</td>
+                        <td>${res.data.result[i].comment}</td>
+                        <td><button type = "button" onclick = "editFunc(${res.data.result[i].id})">수정</button></td>
+                        <td><button type = "button" onclick = "deleteFunc(${res.data.result[i].id})">삭제</button></td>
+                    </tr>
+                    `;
+                    tbody.insertAdjacentHTML('beforeend', html); //html을 넣는 것.
+                }
+            })();
+
+            async function registerFunc() {
+                const form = document.forms['visitor-form'];
+                const res = await axios({
+                    //db의 실제주소(백엔드주소)로 데이터보내서 db에 넣음
+                    method: 'post',
+                    url: '/api/visitor/write',
+                    data: {
+                        name: form.name.value,
+                        comment: form.comment.value,
+                    },
+                });
+                const html = `
+                    <tr>
+                        <td>${res.data.id}</td>
+                        <td>${res.data.name}</td>
+                        <td>${res.data.comment}</td>
+                        <td><button type = "button" onclick = "editFunc(${res.data.id})">수정</button></td>
+                        <td><button type = "button" onclick = "deleteFunc(${res.data.id})">삭제</button></td>
+                    </tr>
+                    `;
+                tbody.insertAdjacentHTML('beforeend', html); //html을 넣는 것.
+            }
+
+            async function editFunc(id) {
+                const form = document.forms['visitor-form'];
+                const res = await axios({
+                    //db의 실제주소(백엔드주소)로 데이터보내서 db에 넣음
+                    method: 'patch',
+                    url: '/api/visitor/update',
+                    data: {
+                        name: form.name.value,
+                        comment: form.comment.value,
+                        id: Number(id),
+                    },
+                });
+                if (res.data.result) {
+                    document.location.reload(); //새로고침하면서 반영되게. 바로 true가 되면 새로고침 자동으로 되어서 바뀌게!!!
+                }
+            }
+
+            async function deleteFunc(id) {
+                if (!confirm('삭제하시겠습니까?')) {
+                    //confirm하고 메시지 넣으면 작동실행전에 alert 뜨는 것과 같음
+                    console.log('취소');
+                    return; // == 취소라는 의미, 취소버튼 누르면 아예 빠져나가 버리게.
+                    //그냥 confirm하게 되면 확인이니까 저거 하나만 작성하면 되니까
+                }
+                const res = await axios({
+                    method: 'delete',
+                    url: '/api/visitor/delete',
+                    data: {
+                        id: Number(id),
+                    },
+                });
+                if (res.data.result) {
+                    document.location.reload();
+                }
+            }
+        </script>
+    </body>
+</html>

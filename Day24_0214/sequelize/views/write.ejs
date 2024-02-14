@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h3>신규 글 작성</h3>
+        <a href="/post">이전 페이지 이동</a><br />
+        <form name="post-form">
+            <fieldset>
+                <legend>신규 글 작성</legend>
+                <input type="text" id="title" placeholder="제목을 입력해주세요." /><br />
+                <textarea id="content" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+                <br /><button type="button" onclick="writeFunc()">등록</button>
+            </fieldset>
+        </form>
+        <script>
+            async function writeFunc() {
+                const res = await axios({
+                    method: 'post',
+                    url: '/api/post/write',
+                    data: {
+                        title: document.querySelector('#title').value,
+                        content: document.querySelector('#content').value,
+                    },
+                });
+                const { result, data } = res.data;
+                if (result) {
+                    //res.data.result 인데 위에서 res.data로 해놨으니까 result만 써도 됌
+                    alert('등록되었습니다.');
+                    document.location.href = `/post/${data}`;
+                }
+            }
+        </script>
+    </body>
+</html>

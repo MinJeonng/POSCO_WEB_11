@@ -1,0 +1,28 @@
+.container{
+  width: 500px;
+  height: 500px;
+  position:relative;
+}
+.container > div{
+  width: 100px;
+  height: 100px;
+  position:absolute;
+}
+.item2{
+  top:30px;
+  left: 30px;
+  background-color: aqua;
+  /* z-index: 2; */
+  z-index: 1;
+}
+.item3{
+  top:60px;
+  left:60px;
+  background-color:blue;
+  /* z-index:3; */
+  z-index: 2;
+}
+.item1{
+  background-color: blueviolet;
+  z-index: 3;
+}

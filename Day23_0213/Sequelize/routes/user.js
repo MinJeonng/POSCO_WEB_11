@@ -15,4 +15,7 @@ router.patch('/update', controller.Cupdate);
 //DELETE /delete 회원삭제
 router.delete('/delete', controller.Cdelete);
 
+//GET /all 회원전체정보
+router.get('/all', controller.Call);
+
 module.exports = router;

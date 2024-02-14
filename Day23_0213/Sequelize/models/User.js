@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 
+//db연결 비번 congig.json에서 다시 설정해야 열림
+
 //모델을 정의해야지 js로 sequelize접근가능
 const UserModel = (sequelize) => {
     //DB 접근
@@ -9,7 +11,7 @@ const UserModel = (sequelize) => {
             id: {
                 type: DataTypes.INTEGER,
                 allowNull: false, //NOT NULL,
-                primarykey: true,
+                primaryKey: true,
                 autoIncrement: true,
             },
             userid: {

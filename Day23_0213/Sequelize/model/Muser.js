@@ -1,3 +1,5 @@
+//이제 이코드는 필요없음
+
 require('dotenv').config();
 const mysql = require('mysql2/promise');
 //mysql연결
@@ -19,33 +21,33 @@ const conn = mysql.createPool({
     connectionLimit: 15, //최대연결수(기본값10)
 });
 
-//sequelize을 사용하면, 이 코드를 쓰지 않고 Cuser.js에 있는 내용만 사용
+//sequelize을 사용하면, 이 코드들은 쓰지 않고 Cuser.js에 있는 내용만 사용
 exports.signup = async (data) => {
-    const query = 'INSERT INTO member (userid, password, username) VALUES (?,?,?)';
+    const query = 'INSERT INTO user (userid, pw, username) VALUES (?,?,?)';
     const [result] = await conn.query(query, [data.id, data.pw, data.username]);
     return result;
 };
 
 exports.Mlogin = async (data) => {
-    const query = 'SELECT * FROM member WHERE userid=? AND password=?';
+    const query = 'SELECT * FROM user WHERE userid=? AND pw=?';
     const [rows] = await conn.query(query, [data.id, data.pw]);
     return rows;
 };
 
 exports.Minfo = async (id) => {
-    const query = 'SELECT * FROM member WHERE id=?';
+    const query = 'SELECT * FROM user WHERE id=?';
     const [rows] = await conn.query(query, [id]);
     return rows;
 };
 
 exports.Mupdate = async (data) => {
-    const query = 'UPDATE member SET password=?, username=? WHERE id=?';
+    const query = 'UPDATE user SET pw=?, username=? WHERE id=?';
     const [result] = await conn.query(query, [data.pw, data.username, data.id]);
     return result;
 };
 
 exports.Mdelete = async (data) => {
-    const query = 'DELETE FROM member WHERE id=?';
+    const query = 'DELETE FROM user WHERE id=?';
     const [result] = await conn.query(query, [data.id]);
     return result;
 };

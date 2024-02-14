@@ -1,0 +1,15 @@
+.bgcolor{
+  /* max : 문단에 맞는 크기만큼 딱 맞춰주되 설정된 값보다 늘어나면 적용되지않음 
+  min : 설정된 값 그 밑으로 떨어지지 않음,
+  min : 예를 들어 한 문장이 500px 그 이후에는 다음문단으로 넘어가면서 한번에
+  보여지지만 500px밑으로 내려가게 되면 문단이 다음문단으로 넘어가지않고
+  스크롤로 움직이게됌*/
+  background-color: aquamarine;
+  min-width: 500px;
+  /* 1920px에서 50%(절반)되었을때 바꿔라 */
+  min-height: calc(1920px - 50%);
+  /* max-width: 500px; */
+}
+p{
+  line-height: 5px;
+}

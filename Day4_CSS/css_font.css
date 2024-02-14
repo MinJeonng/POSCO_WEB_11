@@ -1,0 +1,22 @@
+/* 눈누 폰트 경우 웹폰트 가져오기 방식으로 이렇게 적용 */
+
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 구글폰트는 링크방식으로 해서 가져올 수 있음  */
+/* 폰트를 바꾸는건 대부분 전체 선택자를 선택함 */
+*{
+  /* font-family는 웹사이트에 적용시켜주는 거라서 꼭 필수! */
+  font-family: 'JalnanGothic', sans-serif;
+ } 
+.content1{
+  color: red;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 60px; 
+    /* 보통 line-height는 폰트 사이즈에 두배정도 함 행간! 이라고 생각하자. */
+}
+/* 16px에 20em이면 적용되는 값은 320px이기 때문에 조심할 것 */

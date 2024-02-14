@@ -1,0 +1,33 @@
+.container{
+  background-color: bisque;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  /* flex-direction : row가 기본값 */
+
+  /* 세로 방향에서 끝점을 기준으로 쌓이도록 설정 */
+  flex-direction: column-reverse;
+
+  /* 세로 방향에서 시작점을 기준으로 쌓이도록 설정 */
+  /* flex-direction: column; */
+  
+  /* 가로 방향에서 끝점을 기준으로 쌓이도록 설정 */
+  /* flex-direction: row-reverse; */
+  
+}
+.item1{
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+
+}
+.item2{
+  width: 100px;
+  height: 100px ;
+  background-color: aquamarine;
+}
+.item3{
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+}

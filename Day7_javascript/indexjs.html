@@ -1,0 +1,36 @@
+ <!-- js도 위에서 읽어서 내려오는 순서이다!
+<script>를 어디에 써도 상관은 없지만, <head>안쪽과 <body>안쪽에 많이 씀 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // console.log 는 개발자 도구임! 개발할때만 쓰고 안쓸땐 지우거나 주석처리해야함
+    // console.log("hello js world")
+
+    // html이 다 열리기전에 보여지도록 제어해야하면 script는 head에 넣으면 된다.(그게 아니라면 body에 포함시키면 된다.)
+    alert("Head.js 파일링크 위")
+    
+  </script>
+  <!-- 링크방식 -->
+  <script src="indexjs.js"></script>
+  <script>
+    alert("Head.js 파일 링크아래")
+  </script>
+</head>
+<script>
+  alert("Head랑 body 사이")
+</script>
+<body>
+  <h1>Hello js world</h1>
+  <!-- <script>를 body안쪽에 쓸때는 html 쓸거 다쓰고 맨 마지막에 쓴다. -->
+  <script>
+    alert("body안쪽")
+  </script>
+</body>
+<script>
+  alert("body 아래")
+</script>
+</html>

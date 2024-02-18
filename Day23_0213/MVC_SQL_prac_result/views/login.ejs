@@ -29,7 +29,7 @@
                         alert(`${res.data.data.username}님, 로그인 되었습니다.`);
                         document.location.href = `/profile/${res.data.data.id}`; //해당 프로필로 가야하는거니까.
                     } else {
-                        alert('아이디를 다시 확인해주세요.');
+                        alert('아이디 및 비밀번호를 다시 확인해주세요.');
                         form.reset();
                     }
                 });

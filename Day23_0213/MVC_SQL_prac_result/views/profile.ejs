@@ -19,15 +19,15 @@
     </body>
     <script>
         console.log(document.location.href);
-        const temp = document.location.href.split('profile/'); //맨 마지막 id를 얻기 위해 split해서 배열로 나눔. 그러면 id 이전이 배열[0]일테니 [1]만 가져오자
+        const temp = document.location.href.split('profile/'); //맨 마지막 id를 얻기 위해 split해서 배열로 나눈다.
         console.log(temp);
-        //페이지 실행되자마자 바로 뜨게 하는 것
+        //페이지 실행되자마자 즉시 실행하는 함수
         (async function () {
             const result = await axios({
                 method: 'get',
-                url: `/api/user/info/${temp[1]}`,
+                url: `/api/user/info/${temp[1]}`, //id이전이 배열[0]이므로 [1]만 가져온다.
             });
-            const { id, userid, pw, username } = result.data.info; //오류발생
+            const { id, userid, pw, username } = result.data.info;
             document.querySelector('#id').value = userid; //데이터 넣어줌
             document.querySelector('#pw').value = pw;
             document.querySelector('#username').value = username;
@@ -68,7 +68,6 @@
                 if (res.data.result) {
                     alert('탈퇴가 완료되었습니다.');
                     document.location.href = '/';
-                    //document.location.reload();
                 }
             });
         }

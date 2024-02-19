@@ -39,7 +39,7 @@ const createHashedPassword = (password) => {
 //pdkdf2 함수
 const salt = crypto.randomBytes(16).toString('base64'); //salt 생성 , 난수로 생성
 
-// 이 밑의 값들을 쓰겠다면 이것도 다 .env에 넣어야 함
+// 이 밑의 값들을 쓰겠다면 이것도 다 .env에 넣어서 보안성 높여야함
 const iteration = 10000; //반복횟수
 const keylen = 64; //생성할 키의 길이
 const digest = 'sha256'; //알고리즘

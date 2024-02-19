@@ -8,10 +8,11 @@ let sign = ''; // == db , 전역변수로 password 저장
 app.use(express.json());
 
 //router
+//순서대로 단방향, 양방향.. 실행할때 쓰임
 app.post('/sign', (req, res) => {
     const { pw } = req.body;
     //const sign = createHashedPassword(pw);
-    //sign = createPbkdf(pw); //전역변수안에 들어가게 됌
+    //sign = createPbkdf(pw); //전역변수안에 들어가게 된다.
     //sign = cipherEncrypt(pw); //어떠한 문장을 넣으면 그게 sign에 들어가게 되고, 밑에서 post로 받아서 해결
     sign = bcryptPassword(pw);
     res.json({ result: sign }); //암호화한 값을 보겠다.

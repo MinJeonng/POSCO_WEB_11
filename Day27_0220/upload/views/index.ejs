@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>AWS 파일 업로드</h1>
+        <!-- 폼 데이터를 백엔드로 보낼 것 -->
+        <form onsubmit="upload(event)">
+            <!-- 여러개 파일 업로드 multiple -->
+            <input type="file" id="files" multiple /> <br />
+            <button type="submit">업로드</button>
+        </form>
+        <br />
+        <div class="result"></div>
+        <script>
+            const resultBox = document.querySelector('.result');
+            async function upload(e) {
+                e.preventDefault();
+                //console.log('ddd');
+                //파일 접근
+                const file = document.querySelector('#files');
+                console.log(file.files);
+                //폼 데이터 생성
+                const formData = new FormData();
+                //파일이 여러개이므로 반복문을 사용
+                for (let i = 0; i < file.files.length; i++) {
+                    formData.append('files', file.files[i]);
+                }
+                const res = await axios({
+                    method: 'POST',
+                    url: '/upload',
+                    data: formData,
+                    Headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+                console.log('res', res);
+                //프론트에 사진이 나오게 하는 코드
+                res.data.forEach((value) => {
+                    const img = document.createElement('img');
+                    img.src = value.location; //aws는 location에 담겨있기 때문 이건 aws가 자체적으로 보내주는 것
+                    img.style.width = '300px';
+                    resultBox.append(img);
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,5 +1,5 @@
 const main = (req, res) => {
-    res.render('index');
+    res.render('index'); //홈 페이지
 };
 
 const post = (req, res) => {

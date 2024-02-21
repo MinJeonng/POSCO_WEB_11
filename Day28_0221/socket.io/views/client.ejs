@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/socket.io/socket.io.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Socket.io</h1>
+        <ul></ul>
+        <form id="chat">
+            <input type="text" id="user" placeholder="사용자명" />
+            <input type="text" id="message" placeholder="채팅내용" /><br />
+            <button>채팅</button>
+        </form>
+    </body>
+    <script>
+        const socket = io();
+        const chatForm = document.querySelector('#chat');
+        const ul = document.querySelector('ul');
+        //이벤트 생성(보내는 곳)
+        //접속 되었을때 보여지는 이벤트
+        socket.emit('open_message', '접속되었습니다.', '행복한 일만!', (res, res2) => {
+            console.log(res, res2); //응답
+            // 접속되었습니다 : arg로 들어가는 값인 것!(백엔드) // open_message 옆에 글들은 계속해서 추가 가능
+            //개수만 동일하게 해서 하면 됨
+        });
+        //이벤트 받음
+        //프론트 화면애 보여지는 것
+        socket.on('backend_message', (arg) => {
+            const li = document.createElement('li');
+            li.textContent = `${arg.user}: ${arg.message}`;
+            ul.appendChild(li);
+        });
+        //폼 이벤트
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = chatForm.querySelector('#user'); //chatForm에 해당되는 걸 가져오기때문에 document라고 하지않고 chatForm
+            const msg = chatForm.querySelector('#message');
+            //문자열로 서버로 데이터를 왔다갔다.
+            //form으로 쓴게 이벤트로 서버에 보내서 백으로 보내진다.
+            socket.emit('form_message', { user: user.value, message: msg.value });
+            msg.value = '';
+        });
+    </script>
+</html>

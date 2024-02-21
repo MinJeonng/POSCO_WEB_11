@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.render('client');
 });
+
+/*
 //2번째 채팅예제(브라우저끼리 실시간 채팅 가능)
 app.get('/chat', (req, res) => {
     res.render('chat');
@@ -41,7 +43,8 @@ server.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/chat`);
 });
 
-/*
+*/
+
 //기본예제
 //접속하는 브라우저
 //이벤트를 받는 곳(프론트에서 생성함)
@@ -62,4 +65,3 @@ server.listen(PORT, () => {
     //http를 이용해서 express와 socket을 연결하는거니까 server. 으로 시작
     console.log(`http://localhost:${PORT}`);
 });
-*/

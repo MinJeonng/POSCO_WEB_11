@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>실습1 Socket 연습</h1>
+        <h3>Hello World</h3>
+        <form id="chat">
+            <button id="hello">hello</button>
+            <button id="study">study</button>
+            <button id="bye">bye</button>
+        </form>
+        <ul id="messageList"></ul>
+    </body>
+    <script>
+        const socket = io();
+        const chatForm = document.querySelector('#chat');
+        const ul = document.querySelector('#messageList');
+
+        const helloButton = chatForm.querySelector('#hello');
+        helloButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            ul.innerHTML = '';
+            socket.emit('hello_message', '안녕하세요~', (res) => {
+                const li = document.createElement('li');
+                li.textContent = `hello: ${res}`;
+                ul.appendChild(li);
+            });
+        });
+        const studyButton = chatForm.querySelector('#study');
+        studyButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            ul.innerHTML = '';
+            socket.emit('study_message', '공부하세요~', (res) => {
+                const li = document.createElement('li');
+                li.textContent = `study: ${res}`;
+                ul.appendChild(li);
+            });
+        });
+        const byeButton = chatForm.querySelector('#bye');
+        byeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            ul.innerHTML = '';
+            socket.emit('bye_message', '잘가세요~', (res) => {
+                const li = document.createElement('li');
+                li.textContent = `bye: ${res}`;
+                ul.appendChild(li);
+            });
+        });
+    </script>
+</html>

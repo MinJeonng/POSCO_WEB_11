@@ -27,7 +27,7 @@
             //개수만 동일하게 해서 하면 됨
         });
         //이벤트 받음
-        //프론트 화면애 보여지는 것
+        //프론트 화면에 보여지는 이벤트
         socket.on('backend_message', (arg) => {
             const li = document.createElement('li');
             li.textContent = `${arg.user}: ${arg.message}`;

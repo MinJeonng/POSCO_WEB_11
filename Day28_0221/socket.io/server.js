@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
     });
     socket.on('form_message', (arg) => {
         console.log(arg); //프론트에서 form_message으로 된 이벤트를 보냈기에 받은 것!
-        socket.emit('backend_message', arg);
+        socket.emit('backend_message', arg); //백으로 받은 것 프론트로 보냄.
     });
 });
 

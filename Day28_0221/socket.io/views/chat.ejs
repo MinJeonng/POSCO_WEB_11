@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>채팅</h1>
+        <ul></ul>
+        <form id="chat">
+            <input type="text" id="message" placeholder="채팅내용" /><br />
+            <button>채팅</button>
+        </form>
+        <script>
+            const socket = io();
+            const chatForm = document.querySelector('#chat');
+            const ul = document.querySelector('ul');
+
+            //채팅방 생성
+            const chatRoom = prompt('채팅방 명을 입력하세요');
+            socket.emit('join', chatRoom);
+
+            //조인 후 발생 이벤트(즉, 브라우저 접속시 이벤트)
+            //내가 처음 접속해서 채팅치면 안보이고, 다른 브라우저가 접속하면 보임(다른 브라우저가 입장했다 라는 문구가 보임)
+            socket.on('create', (res) => {
+                const li = document.createElement('li');
+                li.textContent = res;
+                ul.appendChild(li);
+            });
+            //서버에서 전달받은 값
+            socket.on('chat', (res) => {
+                const li = document.createElement('li');
+                li.textContent = res;
+                ul.appendChild(li);
+            });
+
+            //채팅방 메시지
+            //폼이벤트
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const msg = chatForm.querySelector('#message');
+
+                socket.emit('form_message', msg.value); //백엔드로 보냄
+                msg.value = '';
+            });
+        </script>
+    </body>
+</html>

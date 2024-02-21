@@ -13,42 +13,41 @@
             <input type="text" id="message" placeholder="채팅내용" />
             <button>채팅</button>
         </form>
-
         <script>
+            const socket = new WebSocket('ws://localhost:8000');
+            //form가져오기
+            const chatForm = document.querySelector('#chat');
+            //ul 가져오기
             const ul = document.querySelector('ul');
-            const socket = new WebSocket('ws://your-server-url'); // WebSocket 서버 URL을 여기에 입력하세요.
-
+            //서버에 연결
             socket.addEventListener('open', (event) => {
-                // 접속하면서 백엔드한테 줌, 객체를 문자열로 : stringify
-                socket.send(JSON.stringify({ user: 'client', message: 'Hello' }));
+                //send() 백엔드로 메세지를 전송
+                socket.send(JSON.stringify({ user: 'client', message: 'Hello, Server' }));
                 console.log('서버에 연결되었습니다.');
             });
 
-            // 메시지 주고받음
+            //메세지 주고 받음
             socket.addEventListener('message', (event) => {
                 console.log(event);
                 const li = document.createElement('li');
                 li.textContent = event.data;
                 ul.appendChild(li);
             });
-
-            // 오류 이벤트
+            //오류이벤트
             socket.addEventListener('error', (err) => {
-                console.log('error가 발생했습니다.', err);
+                console.log('error발생', err);
             });
-
-            // 접속 종료
+            //종료
             socket.addEventListener('close', (event) => {
-                console.log('서버와 연결이 종료되었습니다.');
+                console.log('서버와 연결이 종료');
             });
 
-            // form 이벤트
-            const chatForm = document.getElementById('chat');
+            //폼이벤트
             chatForm.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const user = chatForm.querySelector('#user');
                 const msg = chatForm.querySelector('#message');
-                // 문자열로 서버로 데이터를 보냄
+                //문자열로 서버로 데이터를 보냄
                 socket.send(JSON.stringify({ user: user.value, message: msg.value }));
                 msg.value = '';
             });

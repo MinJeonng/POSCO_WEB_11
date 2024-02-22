@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>채팅방</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../views/ui.css"></script>
+    </head>
+    <body>
+        <h2>채팅방</h2>
+        <div id="main">
+            <form id="room">
+                <input type="text" id="roomName" placeholder="채팅방 이름 입력" />
+                <input type="text" id="userName" placeholder="사용자 이름 입력" />
+                <button>생성</button>
+            </form>
+        </div>
+        <div id="body">
+            <div id="message">
+                <!-- ~ 입장했다 등의 말을 적을 div-->
+                <div id="notice"></div>
+            </div>
+            <form id="chat">
+                <input type="text" id="chatMessage" placeholder="메시지를 입력하세요." />
+                <button>전송</button>
+            </form>
+        </div>
+
+        <script>
+            const socket = io();
+            const roomForm = document.querySelector('#room');
+            const chatForm = document.querySelector('#chat');
+            const notice = document.querySelector('#notice');
+            const message = document.querySelector('#message');
+
+            let myNickName = ''; //채팅방에 누가 썼는지 알려주는 전역변수 생성
+
+            //소켓이벤트
+            socket.on('notice', (res) => {
+                const div = document.createElement('div');
+                const p = document.createElement('p');
+                p.textContent = res;
+                div.appendChild(p);
+                notice.appendChild(div);
+            });
+            socket.on('newMessage', (res) => {
+                console.log(res);
+                const div = document.createElement('div');
+                const p = document.createElement('p');
+                p.textContent = `${res.user} : ${res.message}`;
+                div.appendChild(p);
+                message.appendChild(div);
+            });
+            //폼이벤트
+            roomForm.addEventListener('submit', (e) => {
+                e.preventDefault(); //폼(form)이 제출될 때 페이지가 다시 로드되는 동작을 막아주는 역할, 폼이 실제로 제출되지 않음
+                const roomName = roomForm.querySelector('#roomName').value;
+                const userName = roomForm.querySelector('#userName').value;
+
+                if (roomName === '' || userName === '') {
+                    alert('방의 이름과 닉네임을 적어주세요.');
+                    return;
+                }
+                socket.emit('create', { roomName, userName }, () => {
+                    //전역변수에 입력한 닉네임 저장
+                    myNickName = userName;
+                });
+            });
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatForm.querySelector('#chatMessage');
+                socket.emit('sendMessage', { message: message.value, user: myNickName }); //대화내용 객체로 보냄
+                message.value = '';
+            });
+        </script>
+    </body>
+</html>

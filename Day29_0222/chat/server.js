@@ -37,7 +37,7 @@ function getUserList(room) {
 const roomList = [];
 //소켓서버
 io.on('connection', (socket) => {
-    //socket : 접속한 웹 브라우저(client)
+    //socket : 접속한 웹 브라우저(client), 개별적으로 접근하고 싶을때 사용
     //io : 접속해 있는 모든 웹 브라우저
 
     //web브라우저가 접속이 되면 고유한 id값이 생성됌, socket.id 로 확인가능

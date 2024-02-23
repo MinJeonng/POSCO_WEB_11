@@ -74,7 +74,7 @@ io.on('connection', (socket) => {
             //특정방에 전체사용자에게 메시지 보내기
             io.to(socket.roomName).emit('newMessage', { message, user, dm: false }); // (프론트에서) 디엠인지 아닌지에 대한 걸 알기 위해 t/f라고 설정
         } else {
-            // io.to : 특정 객체에게 보내는 것(나제외) , 여기서 select로 하게 되면 특정인에게만 보내지게 됨
+            // io.to : 특정 객체에게 보내는 것(나(브라우저) 제외) , 여기서 select로 하게 되면 특정인에게만 보내지게 됨
             io.to(select).emit('newMessage', { message, user, dm: true });
             //자기 자신에게도 내가 보낸 속닥속닥 메시지 보내주기
             socket.emit('newMessage', { message, user, dm: true });

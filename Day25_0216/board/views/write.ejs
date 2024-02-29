@@ -23,6 +23,7 @@
                         title: document.querySelector('#title').value,
                         content: document.querySelector('#content').value,
                     },
+                    //로그인한 사람만 글을 쓸 수 있게 예외처리
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

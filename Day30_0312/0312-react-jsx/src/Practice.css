@@ -1,0 +1,74 @@
+.parent {
+  position: relative;
+}
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.circle1 {
+  left: 10px;
+  top: 10px;
+  background-color: skyblue;
+}
+.eye-white {
+  border-radius: 50%;
+  /* 후손도 모두 따라오기 때문에 이땐, realative, absolute 상관없다. */
+  position: relative;
+  z-index: 5;
+  left: 20px;
+  top: 20px;
+  height: 35px;
+  width: 35px;
+
+  background-color: white;
+}
+.eye-black {
+  border-radius: 50%;
+  position: relative;
+  z-index: 6;
+  left: 1px;
+  top: 10px;
+  height: 15px;
+  width: 15px;
+  background-color: black;
+}
+.circle4 {
+  z-index: 2;
+  background-color: rgb(79, 79, 237);
+  left: 70px;
+  top: 65px;
+}
+.circle5 {
+  z-index: 3;
+  background-color: blue;
+  left: 130px;
+  top: 110px;
+}
+.circle6 {
+  z-index: 4;
+  background-color: rgb(161, 161, 212);
+  left: 200px;
+  top: 100px;
+}
+.circle7 {
+  z-index: 5;
+  background-color: rgb(21, 80, 92);
+  left: 270px;
+  top: 100px;
+}
+.grass {
+  z-index: 4;
+  border-radius: 40px;
+  top: 110px;
+  position: relative;
+}
+/* 이미지를 아래와 같이 가져올수도 있음(같은파일내에서) */
+.grass-bg {
+  margin-top: 300px;
+  width: 300px;
+  height: 200px;
+  background-image: url(./haku.jpeg);
+}

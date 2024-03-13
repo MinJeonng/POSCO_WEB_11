@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import FunctionComponent from './FunctionComponent';
+import ClassComponent from './ClassComponent';
+import Button from './Button';
 
 function App() {
   const name = '코딩온'; //부모
@@ -15,6 +17,14 @@ function App() {
       {/* children은 자식요소에서 사용된다. */}
       {/* '자식내용' 이라고 쓴 부분은 props.children 인 자리어서 이 함수가 실행되는 파일에서 그냥 children이라고 해도 이 내용을 가지고 간다.*/}
       <FunctionComponent message={'끝나라'}>자식내용</FunctionComponent>
+
+      <hr />
+      <ClassComponent name={name} />
+      <hr />
+      {/* children의 요소는 <span>도 포함되는 것 */}
+      <Button link="https://www.google.com">
+        <span>Google</span>
+      </Button>
     </div>
   );
 }

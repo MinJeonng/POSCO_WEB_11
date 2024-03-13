@@ -35,5 +35,8 @@ FunctionComponent.propTypes = {
   //name의 타입을 지정할 수 있음. propTypes은 꼭 import 해줘야함
   //만약 name의 값에 다른 타입이 들어가면 실행은 되나, 개발자에게 검사탭에서 warning으로 알려주는 것 까지 가능
   //유연한 js의 오류를 조금이나마 잡아주는 역할
-  name: propTypes.string,
+
+  //isRequired는 default없을때 작동함.
+
+  name: propTypes.string.isRequired,
 };

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+//클래스형 컴포넌트
 // Component를 꼭 상속받아야한다.
 class ClassComponent extends Component {
   //클래스 컴포넌트는 render 함수 필수

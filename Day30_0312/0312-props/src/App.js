@@ -18,6 +18,8 @@ function App() {
       {/* '자식내용' 이라고 쓴 부분은 props.children 인 자리어서 이 함수가 실행되는 파일에서 그냥 children이라고 해도 이 내용을 가지고 간다.*/}
       <FunctionComponent message={'끝나라'}>자식내용</FunctionComponent>
 
+      {/* 함수형과 클래스형 중복 사용시 prop-types 하나만 뜨는 경우 발생 */}
+      <FunctionComponent name={[1, 2, 3]} />
       <hr />
       <ClassComponent name={name} />
       <hr />

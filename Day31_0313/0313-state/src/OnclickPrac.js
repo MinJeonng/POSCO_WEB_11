@@ -22,6 +22,7 @@ OnclickPrac.defaultProps = {
 };
 
 OnclickPrac.propTypes = {
+  //isRequired : 필수값
   text: PropTypes.string.isRequired,
 };
 

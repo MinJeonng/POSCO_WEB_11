@@ -14,6 +14,11 @@ const SayFunction = () => {
   const onClickLeave = () => {
     setMessage('빠이빠이~');
   };
+
+  const alertMsg = (e, msg) => {
+    console.log(e.target); //버튼 요소가 출력이 됌, 이벤트 객체
+    setMessage(`${msg} 입니다!`);
+  };
   return (
     <div>
       {/* 초기값을 welcome이라고 햇으니까 welcome이 제일 처음 뜸*/}
@@ -24,6 +29,10 @@ const SayFunction = () => {
       {/* react : onClick = {onClickEnter} =---> 함수이름을 쓸거면 ()를 붙이면 안됌, 함수 바로 시행안되게!!, 클릭했을때 함수가 호출되도록 해주는 것 */}
       <button onClick={onClickEnter}>입장</button>
       <button onClick={onClickLeave}>퇴장</button>
+
+      {/* 매개변수가 있을땐 화살표 함수 이용해서 익명함수 처리
+        함수에 인자 보내기 : 인자가 있는 함수는 익명함수로 감싸서 처리, 그렇게 되면 실행이 바로 안되고 클릭햇을때 함수가 실행되게 할 수 있는 것*/}
+      <button onClick={(e) => alertMsg(e, '메시지')}>alert 출력</button>
     </div>
   );
 };

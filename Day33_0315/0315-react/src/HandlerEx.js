@@ -1,3 +1,4 @@
+//실습 1번쨰
 import { Component } from 'react';
 
 export default class HandlerEx extends Component {

@@ -4,6 +4,9 @@ import SyntheticEvent from './SyntheticEvent';
 import Counter from './Counter';
 import HandlerEx from './HandlerEx';
 import ColorChange from './ColorChange';
+import HiddenText from './HiddenText';
+import FruitPrac from './FruitPrac';
+import FruitState from './FruitState';
 
 function App() {
   return (
@@ -18,6 +21,15 @@ function App() {
 
       <hr />
       <ColorChange />
+
+      <hr />
+      <HiddenText />
+
+      <hr />
+      <FruitPrac />
+
+      <hr />
+      <FruitState />
     </div>
   );
 }

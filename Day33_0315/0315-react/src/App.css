@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+img {
+  width: 70px;
+  height: 70px;
+}
+
+#InputText {
+  width: 60px;
+  height: 30px;
+  /* 가운데로 오게 하는 방법 */
+  margin: 0 auto;
+}

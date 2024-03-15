@@ -1,3 +1,4 @@
+//실습 2번째
 import { useState } from 'react';
 
 const ColorChange = () => {

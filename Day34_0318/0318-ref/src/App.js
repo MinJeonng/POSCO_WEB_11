@@ -2,6 +2,7 @@ import './App.css';
 import RefPrac from './RefPrac';
 import RefSample1 from './RefSample1';
 import RefSample2 from './RefSample2';
+import RefSample3 from './RefSample3';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <hr />
       {/*  클래스형 : ref 사용 -3. createRef 실습 */}
       <RefPrac />
+      <hr />
+      {/* 함수형 : ref 사용 - 1. createRef */}
+      <RefSample3 />
     </div>
   );
 }

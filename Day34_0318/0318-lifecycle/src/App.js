@@ -1,6 +1,7 @@
 import './App.css';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';
+import PracLifeCycle from './PracLifeCycle';
 
 function App() {
   return (
@@ -8,7 +9,10 @@ function App() {
       {/* <LifeCycleClass /> */}
 
       <hr />
-      <LifeCycleFunc />
+      {/* <LifeCycleFunc /> */}
+
+      <hr />
+      <PracLifeCycle />
     </div>
   );
 }

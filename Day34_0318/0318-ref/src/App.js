@@ -1,4 +1,5 @@
 import './App.css';
+import RefPrac from './RefPrac';
 import RefSample1 from './RefSample1';
 import RefSample2 from './RefSample2';
 
@@ -10,6 +11,9 @@ function App() {
       <hr />
       {/* 클래스형 컴포넌트 : ref 사용 - 2. createRef */}
       <RefSample2 />
+      <hr />
+      {/*  클래스형 : ref 사용 -3. createRef 실습 */}
+      <RefPrac />
     </div>
   );
 }

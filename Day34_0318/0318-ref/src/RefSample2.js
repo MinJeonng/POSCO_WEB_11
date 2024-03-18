@@ -7,7 +7,7 @@ export default class RefSample2 extends Component {
     //createRef를 이용해서 설정한 DOM요소에 접근하려면 this.myInput.current 이용
     console.log('this', this);
     console.log('this.myInput.current', this.myInput.current); // this.myInput.current <input type=​"text">​
-    console.log(this.myInput.focus); //undefined
+    console.log(this.myInput.focus); //undefind
     this.myInput.current.focus();
   };
   render() {

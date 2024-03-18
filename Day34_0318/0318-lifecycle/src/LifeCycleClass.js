@@ -23,7 +23,7 @@ export default class LifeCycleClass extends Component {
 
         {this.state.visible && (
           <LifeCycleClassChild number={this.state.number} />
-          // 자식요소가 보여지고 안보여지고를 &&로 가능
+          // 자식요소가 보여지고 안보여지고를 &&로 가능, 즉, visible값이 true일떄만 값을 넘겨라!
         )}
       </div>
     );

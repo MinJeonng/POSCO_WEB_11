@@ -2,6 +2,7 @@ import './App.css';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';
 import PracLifeCycle from './PracLifeCycle';
+import PracLifeCycleAxios from './PracLifeCycleAxios';
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
       {/* <LifeCycleFunc /> */}
 
       <hr />
-      <PracLifeCycle />
+      {/* <PracLifeCycle /> */}
+
+      <hr />
+      <PracLifeCycleAxios />
     </div>
   );
 }

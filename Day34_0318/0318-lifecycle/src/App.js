@@ -1,6 +1,7 @@
 import './App.css';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';
+import PostList from './PostList';
 import PracLifeCycle from './PracLifeCycle';
 import PracLifeCycleJson from './PracLifeCycleJson';
 
@@ -17,6 +18,9 @@ function App() {
 
       <hr />
       <PracLifeCycleJson />
+
+      <hr />
+      {/* <PostList /> */}
     </div>
   );
 }

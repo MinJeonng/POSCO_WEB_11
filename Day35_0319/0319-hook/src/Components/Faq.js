@@ -1,9 +1,9 @@
 //자주 묻는 질문
 import React from 'react';
-import UseToggle from '../hooks/UseToggle';
+import useToggle from '../hooks/useToggle';
 
 export default function Faq() {
-  const [isFaqOpen, setIsFaqOpen] = UseToggle();
+  const [isFaqOpen, setIsFaqOpen] = useToggle();
   return (
     <div>
       <h1>custom hook (UseToggle) ex</h1>

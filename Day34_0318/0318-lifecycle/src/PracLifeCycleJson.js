@@ -36,3 +36,7 @@ export default function PracLifeCycleJson() {
     </div>
   );
 }
+/*
+map에서는 key를 써주는 것을 필수로 해야함
+왜냐면 이전에 변경된 것들이랑 비교해서 하는데 최상위의 것을 해놔야 비교할때 그전거랑 틀린것만 변경해주므로 시간이 덜 걸림
+*/

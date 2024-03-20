@@ -1,0 +1,18 @@
+//해답 참고해서 다시
+
+@import './variables.scss';
+header {
+  background-color: aqua;
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.content {
+  padding: 0px 200px;
+  @include raw(border);
+
+  .raw {
+    font-size: $font-size;
+  }
+}

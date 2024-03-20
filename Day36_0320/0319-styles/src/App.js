@@ -4,11 +4,12 @@ import StyledComponents from './StyledComponents';
 import PracScssLarva from './PracScssLarva';
 import './styles/App.css';
 import PracScssMixin from './PracScssMixin';
+import PracJson from './PracJson';
 
 function App() {
   return (
     <div className="App">
-      <h1>React Styling</h1>
+      {/* <h1>React Styling</h1> */}
       {/* <CssModuleComponents />
 
       <hr />
@@ -19,7 +20,9 @@ function App() {
 
       {/* <hr /> */}
       {/* <PracScssLarva /> */}
-      <PracScssMixin />
+      {/* <PracScssMixin /> */}
+
+      <PracJson />
     </div>
   );
 }

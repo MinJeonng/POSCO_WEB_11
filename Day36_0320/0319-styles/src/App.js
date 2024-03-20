@@ -17,11 +17,8 @@ function App() {
       <hr />
       <StyledComponents /> */}
 
-      {/* <hr /> */}
-      {/* <PracScssLarva /> */}
-
       <hr />
-      <PracScssMixin />
+      <PracScssLarva />
     </div>
   );
 }

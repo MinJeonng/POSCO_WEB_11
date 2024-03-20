@@ -1,0 +1,17 @@
+@import './utils.scss';
+
+.circle {
+  border-radius: $border-radius;
+  &.circle1 {
+    background-color: $color-circle1;
+    @include move-circle(10);
+  }
+  &.circle2 {
+    background-color: $color-circle2;
+    @include move-circle(20);
+  }
+  &.circle3 {
+    background-color: $color-circle3;
+    @include move-circle(30);
+  }
+}

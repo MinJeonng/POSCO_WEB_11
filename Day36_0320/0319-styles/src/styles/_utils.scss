@@ -1,0 +1,43 @@
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+$color-circle1: pink;
+$color-circle2: yellow;
+$color-circle3: green;
+
+$border-radius: 50%;
+
+@mixin move-circle($distance) {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  animation: move-#{$distance} 2s infinite;
+
+  @at-root {
+    //믹스인 내부가 아닌 CSS의 전역 스코프에 존재해야함 - keyframe은 전역스코프에 존재해야함
+    @keyframes move-#{$distance} {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: #{$distance}px;
+      }
+      50% {
+        top: #{$distance}px;
+        left: #{$distance}px;
+      }
+      75% {
+        top: #{$distance}px;
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

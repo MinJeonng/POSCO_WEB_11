@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import './styles/App.css';
+import './styles/App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import MainPage from './pages/MainPage';
+import Main from './pages/MainPage';
 import ProductPage from './pages/ProductPage';
 import NotFound from './pages/NotFound';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<Main />} />
           <Route path="/products" element={<ProductPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/products/:productId" element={<ProductDetailPage />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -2,12 +2,13 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { productInfos } from '../components/ProductList';
 
-const ProductDetailPage = () => {
+const ProductDetailPage = ({ products }) => {
   const { productId } = useParams();
   console.log(useParams()); // localhost:3000/products/2 = {productId :  '2'}
   console.log('productId', productId); // productId 2
 
-  const targetproduct = productInfos[Number(productId) - 1]; // 2번째 인덱스 값이 들어감, 타입스크립트로 넘어가면 명확하게 타입을 적어줘야 함
+  // const targetproduct = productInfos[Number(productId) - 1]; 여기서 이걸로 productInfos 가져왔다가 api요청으로 받은 파일을 받게됌
+  const targetproduct = products[Number(productId) - 1]; // 2번째 인덱스 값이 들어감, 타입스크립트로 넘어가면 명확하게 타입을 적어줘야 함
   const { id, name, email, body } = targetproduct;
   //navigate를 이용하려면 변수 하나 생성해야함
   //Link를 이용하는게 아니라

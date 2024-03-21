@@ -1,5 +1,8 @@
 import './styles/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import Header from './components/Header';
 import Main from './pages/MainPage';
 import ProductPage from './pages/ProductPage';
@@ -7,14 +10,34 @@ import NotFound from './pages/NotFound';
 import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
+  const [products, setProducts] = useState([]); //기존에 있던 값 대신에 여기서 값을 요청해서 props로 넘겨줄 것
+
+  const getProducts = async () => {
+    const res = await axios.get(
+      'https://jsonplaceholder.typicode.com/comments'
+    );
+    setProducts(res.data.slice(0, 10));
+
+    console.log('products', res.data.slice(0, 10)); //products에 담겨있음
+  };
+
+  useEffect(() => {
+    getProducts(); //mount되었을때 실행되도록 하자 , 화면에 처음 렌더링 되었을때 getProducts()를 호출할 것
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/products" element={<ProductPage />} />
-          <Route path="/products/:productId" element={<ProductDetailPage />} />
+          <Route
+            path="/products"
+            element={<ProductPage products={products} />}
+          />
+          <Route
+            path="/products/:productId"
+            element={<ProductDetailPage products={products} />}
+          />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

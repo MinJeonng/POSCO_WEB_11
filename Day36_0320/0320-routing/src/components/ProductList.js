@@ -2,6 +2,7 @@ import React from 'react';
 import ProductItem from './ProductItem';
 
 //DB가 없어서 임의로 만든 데이터를 외부에서 쓰기 위해 export
+/*
 export const productInfos = [
   {
     id: 1,
@@ -64,12 +65,12 @@ export const productInfos = [
     body: 'voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis',
   },
 ];
-
-const ProductList = () => {
+*/
+const ProductList = ({ products }) => {
   return (
     <div className="ProductList">
       <h1>ProductList</h1>
-      {productInfos.map((product) => {
+      {products.map((product) => {
         return <ProductItem key={product.id} product={product} />;
       })}
       ;

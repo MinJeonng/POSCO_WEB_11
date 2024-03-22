@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deposit, withdraw } from './store/bankReducer';
 
-export default function App4() {
+export default function Bank() {
   const balance = useSelector((state) => state.account.balance);
   const dispatch = useDispatch();
   const [amount, setAmount] = useState('');

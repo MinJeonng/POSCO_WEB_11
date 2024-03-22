@@ -12,7 +12,7 @@ import rootReducer from './store';
 import App2 from './App2';
 import App3 from './App3';
 import { composeWithDevTools } from '@redux-devtools/extension';
-import App4 from './App4';
+import Bank from './Bank';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //store 정의 : 전역으로 상태를 관리하는 공간(상태, reducer 가 존재)(하나의 프로젝트에 하나만 존재)
@@ -30,7 +30,7 @@ root.render(
       {/* <App /> */}
       {/* <App2 /> */}
       {/* <App3 /> */}
-      <App4 />
+      <Bank />
     </Provider>
   </React.StrictMode>
 );

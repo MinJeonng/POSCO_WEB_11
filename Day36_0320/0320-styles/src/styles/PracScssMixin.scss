@@ -1,7 +1,6 @@
 @import './utils.scss';
 
 .circle {
-  border-radius: $border-radius;
   &.circle1 {
     background-color: $color-circle1;
     @include move-circle(10);

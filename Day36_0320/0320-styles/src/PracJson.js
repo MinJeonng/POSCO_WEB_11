@@ -12,7 +12,6 @@ export default function PracLifeCycleJson() {
     // 2. useEffect는 비동기 함수를 직접 지원하는것이 아니라서 함수를 아래처럼 만들고 호출하는 방법으로 사용해야한다.
     const getPosts = async () => {
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      // console.log(res.data); //Array(100)
 
       setPosts(res.data.slice(0, 10)); //10개만 slice
     };

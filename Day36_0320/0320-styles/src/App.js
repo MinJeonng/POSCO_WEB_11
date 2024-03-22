@@ -10,13 +10,13 @@ function App() {
   return (
     <div className="App">
       {/* <h1>React Styling</h1> */}
-      {/* <CssModuleComponents />
+      {/* <CssModuleComponents /> */}
 
       <hr />
-      <SassComponents />
+      {/* <SassComponents /> */}
 
       <hr />
-      <StyledComponents /> */}
+      {/* <StyledComponents />  */}
 
       {/* <hr /> */}
       {/* <PracScssLarva /> */}

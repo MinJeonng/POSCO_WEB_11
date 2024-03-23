@@ -1,3 +1,4 @@
+//예제 1번 - 블로깅x
 const olimpic_newgame: readonly [object, boolean] = [
   {
     name: '쇼트트랙',
@@ -5,4 +6,12 @@ const olimpic_newgame: readonly [object, boolean] = [
   },
   true,
 ];
-console.log(olimpic_newgame[0]);
+
+//예제 2번 - 블로깅x
+interface Game {
+  title: string;
+  price: number;
+  desc?: string;
+  category: string;
+  platform: string;
+}

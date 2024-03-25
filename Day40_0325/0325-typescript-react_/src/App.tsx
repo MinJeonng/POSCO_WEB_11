@@ -1,3 +1,4 @@
+import LifeCycle from './components/LifeCycle';
 import Student from './components/Student';
 import TodoList from './components/TodoList';
 
@@ -13,6 +14,8 @@ function App() {
       {/* optional 한 part이므로 값을 안줘도 에러가 나진 않음 */}
       <hr />
       <TodoList />
+      <hr />
+      <LifeCycle />
     </div>
   );
 }

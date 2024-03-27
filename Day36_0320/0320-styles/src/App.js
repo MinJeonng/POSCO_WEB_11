@@ -23,6 +23,7 @@ function App() {
       {/* <PracScssMixin /> */}
 
       <PracJson />
+      {/* Mixin 연습 */}
     </div>
   );
 }

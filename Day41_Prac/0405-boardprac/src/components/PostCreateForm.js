@@ -1,5 +1,5 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addPost } from '../redux/postSlice';
@@ -21,26 +21,45 @@ export default function PostCreateForm() {
     dispatch(addPost(newPost));
     navigate('/'); //버튼을 누르게 되면 메인에 넘어가서 보이게 된것
   };
+
+  //useCallback
+  const [input, setInput] = useState('');
+  const someFunction = () => {
+    console.log(`input:${input}`);
+  };
+  useEffect(() => {
+    console.log('someFunc 변경');
+  }, [someFunction]);
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="title">제목</label>
-        <input
-          type="text"
-          id="title"
-          {...register('title', { required: '제목은 필수' })}
-        />
-      </div>
-      <div>
-        <label htmlFor="content">내용</label>
-        <textarea
-          id="content"
-          cols="30"
-          rols="10"
-          {...register('content')}
-        ></textarea>
-      </div>
-      <button type="submit">작성</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="title">제목</label>
+          <input
+            type="text"
+            id="title"
+            {...register('title', { required: '제목은 필수' })}
+          />
+        </div>
+        <div>
+          <label htmlFor="content">내용</label>
+          <textarea
+            id="content"
+            cols="30"
+            rols="10"
+            {...register('content')}
+          ></textarea>
+        </div>
+        <button type="submit">작성</button>
+      </form>
+      <hr />
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button onClick={someFunction}>call Func</button>
+    </>
   );
 }

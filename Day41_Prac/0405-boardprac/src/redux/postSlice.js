@@ -14,6 +14,7 @@ const postSlice = createSlice({
       //addPost라는 액션이 있다.
       console.log(action);
       state.postList.push(action.payload); //addPost를 할때마다 push
+      //payload는 데이터를 의미.
     },
   },
 });

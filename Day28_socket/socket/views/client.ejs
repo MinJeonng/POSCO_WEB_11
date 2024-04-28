@@ -23,7 +23,7 @@
       socket.addEventListener('open', (event) => {
         //send() 백엔드로 메세지를 전송
         socket.send(
-          JSON.stringify({ user: 'client', message: 'Hello, Server' })
+          JSON.stringify({ user: 'client', message: 'Hello, Server' }) //성공하면 전달됌
         );
         console.log('서버에 연결되었습니다.');
       });

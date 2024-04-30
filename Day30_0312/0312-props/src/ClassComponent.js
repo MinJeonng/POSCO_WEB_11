@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 
 //클래스형 컴포넌트
 // Component를 꼭 상속받아야한다.

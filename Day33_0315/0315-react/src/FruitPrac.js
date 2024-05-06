@@ -10,12 +10,12 @@ class FruitPrac extends Component {
   };
 
   fruitChoose = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({ fruit: e.target.value });
   };
 
   backgroundChoose = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({ backgroundColor: e.target.value });
   };
 

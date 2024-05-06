@@ -1,9 +1,9 @@
 //함수형 컴포넌트
 import { useState } from 'react';
 export default function Counter() {
-  const [number, setMeaage] = useState(0);
+  const [number, setNumber] = useState(0);
   const increase = () => {
-    setMeaage(number + 1);
+    setNumber(number + 1);
   };
   const alertMsg = (msg) => {
     alert(`${msg} 너무! 현재 숫자는 ${number}`);

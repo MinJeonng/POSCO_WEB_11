@@ -1,10 +1,27 @@
 import './App.css';
+import Practice from './Practice';
 
 function App() {
-  let text_2 = '공부중 입니댜';
-  let replaxce = text_2.replace(/공부중/, '노는중');
-  console.log(replaxce);
-  return <div className="App">{replaxce}</div>;
+  const drinkName = '아메리카노';
+  const drinkName_1 = '카페라떼';
+  const drinkName_2 = '초코라떼';
+  const drinkName_3 = '망고 블렌디드';
+  const drinkName_4 = '딸기 요거트 블렌디드';
+  const drinkName_5 = '유자 블렌디드';
+  const price = '4000원';
+  return (
+    <div className="App">
+      <Practice
+        drinkName={drinkName}
+        price={price}
+        drinkName_1={drinkName_1}
+        drinkName_2={drinkName_2}
+        drinkName_3={drinkName_3}
+        drinkName_4={drinkName_4}
+        drinkName_5={drinkName_5}
+      />
+    </div>
+  );
 }
 
 export default App;

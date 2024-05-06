@@ -1,6 +1,6 @@
 import './Practice_second.css';
 
-function second() {
+function Practice_second() {
   const name = '베키';
   const animal = '갱얼쥐';
   const styles = {
@@ -42,4 +42,4 @@ function second() {
   );
 }
 
-export default second;
+export default Practice_second;

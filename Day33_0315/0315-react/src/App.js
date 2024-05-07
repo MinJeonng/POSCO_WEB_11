@@ -7,6 +7,7 @@ import ColorChange from './ColorChange';
 import HiddenText from './HiddenText';
 import FruitPrac from './FruitPrac';
 import FruitState from './FruitState';
+import Select from './Select';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
 
       <hr />
       <FruitState />
+
+      {/* <hr />
+      <Select /> */}
     </div>
   );
 }
